@@ -25,6 +25,8 @@ public class UserDAO {
     private static final String IS_ADMIN = "IS_ADMIN";
     private static final String IMAGE = "IMAGE";
 
+    private static final String CART_TABLE = "CART";
+
     // Connection and Statement for creating queries
     private Connection connection;
     private PreparedStatement preparedStatement;
@@ -192,6 +194,25 @@ public class UserDAO {
                 resultSet.close();
                 resultSet = null;
             }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
+
+    public void AddUserIDToCart(String emailAddress) {
+        try {
+            preparedStatement = connection.prepareStatement("SELECT " + USER_ID + " FROM " + USERS_TABLE
+                    + " WHERE " + EMAIL_ADDRESS + " = ?");
+
+            preparedStatement.setString(1, emailAddress);
+            resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            int user_id = resultSet.getInt(USER_ID);
+            System.out.println("User_ID " + user_id);
+            preparedStatement = connection.prepareStatement("INSERT INTO "
+                    + CART_TABLE + " (" + USER_ID + ") VALUES (?)");
+            preparedStatement.setInt(1, user_id);
+            preparedStatement.executeUpdate();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }

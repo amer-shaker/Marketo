@@ -29,6 +29,7 @@ public class SignUpController extends HttpServlet {
             UserDAO userDAO = new UserDAO();
             boolean added = userDAO.addUser(firstName, lastName, userName, password, emailAddress, null, null);
             if (added == true) {
+                userDAO.AddUserIDToCart(emailAddress);
                 System.err.println("Register Done");
                 request.getRequestDispatcher("sign-in.jsp").forward(request, response);
             } else {
