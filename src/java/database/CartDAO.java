@@ -82,11 +82,11 @@ int cart_id = 0;
         }
     }
 
-    public boolean addProductToCart(int quantity, int product_id) throws SQLException {
+    public boolean addProductToCart(int quantity, int product_id,int user_id) throws SQLException {
 
         boolean isSuccess = false;
         boolean flag=false;
-       cart_id= getCartId(66);
+       cart_id= getCartId(user_id);
        items=getProductItems();
          if(items!=null){
            for (ItemsBean item:items)
@@ -98,7 +98,7 @@ int cart_id = 0;
            }
             }
          if(flag==false){
-        try {
+       try {
             
             preparedStatement = connection.prepareStatement("insert into " + ORDER_LINE_ITEMS_TABLE + "(" + QUANTITY + "," + PRODUCT_ID + "," + CART_ID + ") values (?,?,?)");
             preparedStatement.setInt(1, quantity);
@@ -107,14 +107,15 @@ int cart_id = 0;
             isSuccess = preparedStatement.executeUpdate() > 0;
 
             System.out.println(cart_id);
-        } catch (SQLException ex) {
+    
+       } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         } finally {
             closeResources();
         }
 
-       
-    } 
+         } 
+    
          return isSuccess;
     }
     public ArrayList<ItemsBean> getProductItems() throws SQLException {

@@ -60,7 +60,7 @@
                             </a>
                         </li>                
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary btn-round" href="sign-up">SIGN UP</a>
+                            <a class="nav-link btn btn-primary btn-round" href="${pageContext.request.contextPath}/sign-up.jsp">SIGN UP</a>
                         </li>
                     </ul>
                 </div>

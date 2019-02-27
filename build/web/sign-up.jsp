@@ -75,7 +75,7 @@
             <div class="container">
                 <div class="col-md-12 content-center">
                     <div class="card-plain">
-                        <form class="form" action="/Marketo/sign-up" method="post" name="registerform" onSubmit="return validateForm()">
+                        <form class="form" action="${pageContext.request.contextPath}/sign-in.jsp" method="post" name="registerform" onSubmit="return validateForm()">
                             <div class="header">
                                 <div class="logo-container">
                                     <img src="assets/images/logo.svg" alt="">
@@ -185,8 +185,8 @@
                 var numbers = /^[0-9]+$/;
                 var alphanumeric = /^[0-9a-zA-Z]+$/;
                 var regDOB = /^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})$/;
-                var regAdd = /^(?=.*\d)[a-zA-Z\s\d\/]+$/;
-                var upassreg = /^[a-zA-z]{5,10}/;
+                var regAdd = /^[A-Za-z0-9]+$/;
+                var upassreg = /^[a-zA-z0-9]{5,10}/;
 
                 if (!firstName.value.match(letters)) {
                     alert("First Name or email not correct");

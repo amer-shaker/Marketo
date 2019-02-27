@@ -7,7 +7,10 @@
             <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/nbproject/build-impl.xml</file>
             <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/utils/Constants.java</file>
             <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/sign-in.jsp</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/ec-recent-orders.jsp</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/LogoutController.java</file>
             <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/database/ProductDAO.java</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/LoginController.java</file>
             <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/ec-product.jsp</file>
             <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/utils/Utility.java</file>
         </group>

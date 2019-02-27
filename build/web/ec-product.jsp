@@ -316,13 +316,23 @@
                         <div class="card">
 
                             <ul class="list-unstyled activity">
+                                <c:if test="${userObj==null}">
                                 <li>
                                     <a href="javascript:void(0)">
                                         <a href="${pageContext.request.contextPath}/sign-in.jsp" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign in</a>
                                         <a href="${pageContext.request.contextPath}/sign-up.jsp" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign up</a>
                                     </a>
                                 </li>
-
+                                </c:if>
+                               
+                                <c:if test="${userObj!=null}">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <a href="${pageContext.request.contextPath}/home" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign out</a>
+                                    </a>
+                                </li>
+                                </c:if>
+                               
                             </ul>
                         </div>
 
@@ -531,6 +541,8 @@
                                                 <img src="data:image/jpeg;base64,${applicationScope.products.get(i).productImage}" alt="Product" class="img-fluid" />
                                                 <div class="hover">
                                                     <a href="javascript:void(0);" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                                    <a href="http://localhost:8084/Marketo/CartServlet?product_id=${applicationScope.products.get(i).productId}" class="btn btn-primary waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+
                                                 </div>
                                             </div>
                                             <div class="product_details">

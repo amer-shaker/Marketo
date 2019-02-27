@@ -42,7 +42,7 @@ public class LoginController extends HttpServlet {
             }
             if (userName == null && password == null) {
 //                response.sendRedirect("sign-in.jsp");
-                UserBean user = (UserBean) request.getSession();
+                UserBean user = (UserBean) request.getSession().getAttribute("userObj");
                 System.out.println("uuuu" + user.getFirstName());
                 System.out.println("doGet User Is Pass USE : Null");
 //                request.getRequestDispatcher(request.getContextPath() + "/sign-in").forward(request, response);
