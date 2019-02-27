@@ -213,15 +213,16 @@
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>App</span>
                         </a>
                         <ul class="ml-menu">
-                            <li><a href="ec-contact.html">Contact list</a></li>
+                            <li> <a href="ec-dashboard.jsp">Dashboard</a></li>                            
                         </ul>
                     </li>
                     <li class="active open"> <a href="javascript:void(0);" class="menu-toggle"><i
                                 class="zmdi zmdi-shopping-cart"></i><span>Ecommerce</span> </a>
                         <ul class="ml-menu">
-                            <li> <a href="ec-dashboard.html">Dashboard</a></li>
+                            <li> <a href="ec-users.jsp">Users List</a></li>                            
+                            <li> <a href="ec-recent-orders.jsp">Recent Orders</a></li>
                             <li> <a href="ec-product-List.jsp">Product List</a></li>
-                            <li class="active"> <a href="ec-add-product.jsp">Add Product</a></li>
+                            <li class="active"> <a href="ec-add-product.jsp">Add / Edit Products</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -621,73 +622,11 @@
             </div>
         </aside>
 
-        <!-- Chat-launcher -->
-        <div class="chat-launcher"></div>
-        <div class="chat-wrapper">
-            <div class="card">
-                <div class="header">
-                    <ul class="list-unstyled team-info margin-0">
-                        <li class="m-r-15"><h2>Design Team</h2></li>
-                        <li>
-                            <img src="assets/images/xs/avatar2.jpg" alt="Avatar">
-                        </li>
-                        <li>
-                            <img src="assets/images/xs/avatar3.jpg" alt="Avatar">
-                        </li>
-                        <li>
-                            <img src="assets/images/xs/avatar4.jpg" alt="Avatar">
-                        </li>
-                        <li>
-                            <img src="assets/images/xs/avatar6.jpg" alt="Avatar">
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" title="Add Member"><i class="zmdi zmdi-plus-circle"></i></a>
-                        </li>
-                    </ul>                       
-                </div>
-                <div class="body">
-                    <div class="chat-widget">
-                        <ul class="chat-scroll-list clearfix">
-                            <li class="left float-left">
-                                <img src="assets/images/xs/avatar3.jpg" class="rounded-circle" alt="">
-                                <div class="chat-info">
-                                    <a class="name" href="#">Alexander</a>
-                                    <span class="datetime">6:12</span>                            
-                                    <span class="message">Hello, John </span>
-                                </div>
-                            </li>
-                            <li class="right">
-                                <div class="chat-info"><span class="datetime">6:15</span> <span class="message">Hi, Alexander<br> How are you!</span> </div>
-                            </li>
-                            <li class="right">
-                                <div class="chat-info"><span class="datetime">6:16</span> <span class="message">There are many variations of passages of Lorem Ipsum available</span> </div>
-                            </li>
-                            <li class="left float-left"> <img src="assets/images/xs/avatar2.jpg" class="rounded-circle" alt="">
-                                <div class="chat-info"> <a class="name" href="#">Elizabeth</a> <span class="datetime">6:25</span> <span class="message">Hi, Alexander,<br> John <br> What are you doing?</span> </div>
-                            </li>
-                            <li class="left float-left"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt="">
-                                <div class="chat-info"> <a class="name" href="#">Michael</a> <span class="datetime">6:28</span> <span class="message">I would love to join the team.</span> </div>
-                            </li>
-                            <li class="right">
-                                <div class="chat-info"><span class="datetime">7:02</span> <span class="message">Hello, <br>Michael</span> </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="input-group p-t-15">
-                        <input type="text" class="form-control" placeholder="Enter text here...">
-                        <span class="input-group-addon">
-                            <i class="zmdi zmdi-mail-send"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <section class="content">
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-7 col-md-6 col-sm-12">
-                        <h2>Add Product
+                        <h2>Add / Edit Product
                             <small class="text-muted">Welcome to Marketo</small>
                         </h2>
                     </div>
@@ -695,7 +634,7 @@
                         <ul class="breadcrumb float-md-right">
                             <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Marketo</a></li>
                             <li class="breadcrumb-item"><a href="javascript:void(0);">eCommerce</a></li>
-                            <li class="breadcrumb-item active">Add Product</li>
+                            <li class="breadcrumb-item active">Add / Edit Products</li>
                         </ul>
 
                     </div>
@@ -782,12 +721,11 @@
                                         <div class="col-sm-4"> 
                                             <p> <b>PRODUCT IMAGE</b> </p>
                                             <div class="form-group">
-                                                <img id="productImageDisplay" hidden="true" src="#" /> 
+                                                <img id="productImageDisplay" width="128" height="128" src="assets/images/product-image.svg" /> 
                                                 <input type="file" onchange="loadFile(event)" class="form-control" name="productImage" size="5" accept="/*" required />   
                                             </div>
                                         </div>    
                                     </div>
-
                                     <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" name="actionType"
                                             <c:if test="${product != null}">
                                                 value="editProduct"
@@ -817,16 +755,18 @@
 
         <script src="assets/plugins/jquery-validation/jquery.validate.js"></script> <!-- Jquery Validation Plugin Css --> 
         <script src="assets/plugins/jquery-steps/jquery.steps.js"></script> <!-- JQuery Steps Plugin Js --> 
-        <script>
-        function loadFile(event) {
-         var output = document.getElementById("productImageDisplay");
-            output.height = 50;
-            output.hidden = false;
-            output.src = URL.createObjectURL(event.target.files[0]);
-            };
-        </script>
+
         <script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js --> 
-        <script src="assets/js/pages/forms/form-validation.js"></script> 
+        <script src="assets/js/pages/forms/form-validation.js"></script>
+        <script>
+                                                    function loadFile(event) {
+                                                        var output = document.getElementById("productImageDisplay");
+                                                        output.height = 128;
+                                                        output.hidden = false;
+                                                        output.src = URL.createObjectURL(event.target.files[0]);
+                                                    }
+                                                    ;
+        </script>
     </body>
 
 </html>

@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class CategoryDAO {
 
     private static final String CATEGORIES_TABLE = "CATEGORIES";
-    private static final String CATEGORY_ID = "CATEGORY_ID";
-    private static final String CATEGORY_NAME = "CATEGORY_NAME";
+    private static final String CATEGORY_ID_COLUMN = "CATEGORY_ID";
+    private static final String CATEGORY_NAME_COLUMN = "CATEGORY_NAME";
 
     // Connection and Statement for creating queries
     private Connection connection;
@@ -42,8 +42,8 @@ public class CategoryDAO {
             if (resultSet != null) {
                 while (resultSet.next()) {
                     CategoryBean category = new CategoryBean();
-                    category.setCategoryId(resultSet.getInt(CATEGORY_ID));
-                    category.setCategoryName(resultSet.getString(CATEGORY_NAME));
+                    category.setCategoryId(resultSet.getInt(CATEGORY_ID_COLUMN));
+                    category.setCategoryName(resultSet.getString(CATEGORY_NAME_COLUMN));
                     categories.add(category);
                 }
             }
@@ -52,7 +52,7 @@ public class CategoryDAO {
         } finally {
             closeResources();
         }
-        
+
         return categories;
     }
 
