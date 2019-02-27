@@ -36,7 +36,7 @@
                 <div class="navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="/Marketo/home">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Search Result</a>
@@ -60,7 +60,7 @@
                             </a>
                         </li>                
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary btn-round" href="sign-up.html">SIGN UP</a>
+                            <a class="nav-link btn btn-primary btn-round" href="sign-up">SIGN UP</a>
                         </li>
                     </ul>
                 </div>
@@ -72,7 +72,7 @@
             <div class="container">
                 <div class="col-md-12 content-center">
                     <div class="card-plain">
-                        <form class="form" action="LoginController" method="post" name="registerform" onSubmit="return validateForm()">
+                        <form class="form" action="/Marketo/sign-in" method="post" name="registerform" onSubmit="return validateForm()">
                             <div class="header">
                                 <div class="logo-container">
                                     <img src="assets/images/logo.svg" alt="">
@@ -122,7 +122,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>,
-                        <span>Designed by <a href="#" target="_blank">ThemeMAkker</a></span>
+                        <span>Designed by <a href="#" target="_blank">Theme</a></span>
                     </div>
                 </div>
             </footer>
@@ -149,11 +149,11 @@
                 var email = document.registerform.email;
                 var password = document.registerform.password;
 
-                var username = /^[0-9a-zA-Z]+$/;
+                var username = /^[a-zA-Z0-9]+$/;
                 var umailreg = /^[a-zA-Z0-9._ - ]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
                 var upassreg = /^[a-zA-z0-9]{5,10}/;
 
-                if (!email.value.match(username)||!email.value.match(umailreg)) {
+                if (!email.value.match(username)) {
                     alert("User Name or email not correct");
                     email.style.background = '#f08080';
                     email.focus();

@@ -1,8 +1,14 @@
 package database;
 
 import beans.UserBean;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import utils.Utility;
 
 /**
  * @author Amer Shaker
@@ -97,16 +103,16 @@ public class UserDAO {
                     + ", " + USER_NAME
                     + ", " + PASSWORD
                     + ", " + EMAIL_ADDRESS
-                    //+ ", " + ADDRESS
+                    + ", " + ADDRESS
                     //+ ", " + PHONE_NUMBER
-                    + ") VALUES (?, ?, ?, ?, ?)");
+                    + ") VALUES (?, ?, ?, ?, ?,?)");
 
             preparedStatement.setString(1, firstName);
             preparedStatement.setString(2, lastName);
             preparedStatement.setString(3, userName);
             preparedStatement.setString(4, password);
             preparedStatement.setString(5, emailAddress);
-            //preparedStatement.setString(6, address);
+            preparedStatement.setString(6, address);
 
             isSuccess = preparedStatement.executeUpdate() > 0;
         } catch (SQLIntegrityConstraintViolationException ex) {
@@ -138,6 +144,46 @@ public class UserDAO {
         }
 
         return isSuccess;
+    }
+
+    public int updateUserProfile(UserBean user, InputStream imageInputStream) throws SQLException {
+        String updateUserQuery = "UPDATE "
+                + USERS_TABLE + " SET "
+                + USER_ID + "=? , "
+                + FIRST_NAME + "=? , "
+                + LAST_NAME + "=? , "
+                + USER_NAME + "=? , "
+                + ADDRESS + "=? , "
+                + EMAIL_ADDRESS + "=? , "
+                + JOB_TITLE + "=? , "
+                + PASSWORD + "=? , "
+                + IMAGE + "=? , "
+                + BIRTH_DATE + "=? "
+                + " WHERE "
+                + USER_ID + "=? ";
+        System.out.println(updateUserQuery);
+        int updateResult = 0;
+        try {
+            preparedStatement = connection.prepareStatement(updateUserQuery);
+            preparedStatement.setInt(1, user.getUserId());
+            preparedStatement.setString(2, user.getFirstName());
+            preparedStatement.setString(3, user.getLastName());
+            preparedStatement.setString(4, user.getUserName());
+            preparedStatement.setString(5, user.getAddress());
+            preparedStatement.setString(6, user.getEmailAddress());
+            preparedStatement.setString(7, user.getJobTitle());
+            preparedStatement.setString(8, user.getPassword());
+            System.out.println("inserted image " + imageInputStream);
+            preparedStatement.setBlob(9, imageInputStream);
+            preparedStatement.setString(10, user.getDateOfBirth());
+            preparedStatement.setInt(11, user.getUserId());
+            updateResult = preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            closeResources();
+        }
+        return updateResult;
     }
 
     public ArrayList<UserBean> getUsers() throws SQLException {
@@ -216,5 +262,60 @@ public class UserDAO {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
+    }
+
+    public static InputStream convertStringToInputStream(String payload) {
+        InputStream is = null;
+        try {
+            if (!isEmpty(payload)) {
+                is = new ByteArrayInputStream(payload.getBytes("UTF-8"));
+            }
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return is;
+    }
+
+    public static boolean isEmpty(String payload) {
+        return payload == null || "".equals(payload.trim());
+    }
+
+    public UserBean getUserById(String userId) throws SQLException {
+        UserBean user = new UserBean();
+        String selectUserQuery = "SELECT * FROM "
+                + USERS_TABLE
+                + " WHERE "
+                + USER_ID
+                + " = ?";
+        try {
+            preparedStatement = connection.prepareStatement(selectUserQuery);
+            preparedStatement.setString(1, userId);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                user.setUserId(resultSet.getInt(USER_ID));
+                user.setFirstName(resultSet.getString(FIRST_NAME));
+                user.setLastName(resultSet.getString(LAST_NAME));
+                user.setUserName(resultSet.getString(USER_NAME));
+                user.setEmailAddress(resultSet.getString(EMAIL_ADDRESS));
+                user.setAddress(resultSet.getString(ADDRESS));
+                user.setCardNumber(resultSet.getLong(CARD_NUMBER));
+                user.setPassword(resultSet.getString(PASSWORD));
+                InputStream inputStream = resultSet.getBinaryStream(IMAGE);
+                if (inputStream != null) {
+                    String imageURL = Utility.readImage(inputStream);
+                    System.out.println("retrieved db " + inputStream);
+                    user.setImage(imageURL);
+                }
+                user.setDateOfBirth(resultSet.getString(BIRTH_DATE));
+//                user.setPhone("123456789");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            closeResources();
+        }
+        return user;
     }
 }

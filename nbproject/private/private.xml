@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/UserProfileServlet.java</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/database/UserDAO.java</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/sign-in.jsp</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/profile.jsp</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/EditUserProfile.java</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/beans/UserBean.java</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/LogoutController.java</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/assets/images/profile_av.jpg</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/ec-product.jsp</file>
+        </group>
     </open-files>
 </project-private>

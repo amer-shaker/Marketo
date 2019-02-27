@@ -761,11 +761,11 @@
                         <div class="row">
                             <div class="preview col-lg-4 col-md-12">
                                 <div class="preview-pic tab-content">
-                                    <div class="tab-pane active" id="product_1"><img src="assets/images/ecommerce/1.png" class="img-fluid" /></div>
-                                    <div class="tab-pane" id="product_2"><img src="assets/images/ecommerce/2.png" class="img-fluid"/></div>
-                                    <div class="tab-pane" id="product_3"><img src="assets/images/ecommerce/3.png" class="img-fluid"/></div>
-                                    <div class="tab-pane" id="product_4"><img src="assets/images/ecommerce/4.png" class="img-fluid"/></div>
-                                    <div class="tab-pane" id="product_5"><img src="assets/images/ecommerce/5.png" class="img-fluid"/></div>
+                                    <div class="tab-pane active" id="product_1"><img src="data:image/jpeg;base64,${applicationScope.products.get(Integer.parseInt(param.index)).productImage}" /></div>
+                                    <div class="tab-pane" id="product_2"><img src="data:image/jpeg;base64,${applicationScope.products.get(Integer.parseInt(param.index)).productImage}"/></div>
+                                    <div class="tab-pane" id="product_3"><img src="data:image/jpeg;base64,${applicationScope.products.get(Integer.parseInt(param.index)).productImage}"/></div>
+                                    <div class="tab-pane" id="product_4"><img src="data:image/jpeg;base64,${applicationScope.products.get(Integer.parseInt(param.index)).productImage}"/></div>
+                                    <div class="tab-pane" id="product_5"><img src="data:image/jpeg;base64,${applicationScope.products.get(Integer.parseInt(param.index)).productImage}"/></div>
                                 </div>
                                 <ul class="preview-thumbnail nav nav-tabs">
                                     <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#product_1"><img src="assets/images/ecommerce/1.png" /></a></li>

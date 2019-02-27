@@ -6,7 +6,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 ﻿<!doctype html>
 <html class="no-js " lang="en">
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -193,21 +192,20 @@
         <aside id="leftsidebar" class="sidebar">
             <div class="menu">
                 <ul class="list">
-                    <li>
-                        <div class="user-info">
-                            <div class="image"><a href="profile.html"><img src="assets/images/profile_av.jpg" alt="User"></a></div>
-                            <div class="detail">
-                                <h4>Michael</h4>
-                                <small>UI UX Designer</small>                        
+                    <c:if test="${userObj.firstName!=null}">
+                        <li>
+                            <div class="user-info">
+                                <div class="image"><a href="profile.html"><img src="assets/images/profile_av.jpg" alt="User"></a></div>
+                                <div class="detail">
+                                    <h4>${userObj.firstName}</h4>
+                                    <small>${userObj.jobTitle}</small>                        
+                                </div>
+                                <a href="contact.html" title="Contact List"><i class="zmdi zmdi-account-box-phone"></i></a>
+                                <a href="${pageContext.request.contextPath}/UserProfileServlet" title="Chat App"><i class="zmdi zmdi-comments"></i></a>
+                                <a href="${pageContext.request.contextPath}/Logout" title="Sign out"><i class="zmdi zmdi-power"></i></a>
                             </div>
-                            <a href="events.html" title="Events"><i class="zmdi zmdi-calendar"></i></a>
-                            <a href="mail-inbox.html" title="Inbox"><i class="zmdi zmdi-email"></i></a>
-                            <a href="contact.html" title="Contact List"><i class="zmdi zmdi-account-box-phone"></i></a>
-                            <a href="chat.html" title="Chat App"><i class="zmdi zmdi-comments"></i></a>
-                            <a href="sign-in.html" title="Sign out"><i class="zmdi zmdi-power"></i></a>
-                        </div>
-                    </li>
-                    <li class="header">MAIN</li>
+                        </li>
+                    </c:if>
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a>
                         <ul class="ml-menu">
                             <c:forEach items="${applicationScope.categories}" var="category">
@@ -216,128 +214,7 @@
 
                         </ul>
                     </li>
-                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>App</span> </a>
-                        <ul class="ml-menu">
-                            <li><a href="mail-inbox.html">Inbox</a></li>
-                            <li><a href="chat.html">Chat</a></li>
-                            <li><a href="events.html">Calendar</a></li>
-                            <li><a href="file-dashboard.html">File Manager</a></li>
-                            <li><a href="contact.html">Contact list</a></li>
-                            <li><a href="blog-dashboard.html">Blog</a></li>
-                        </ul>
-                    </li>            
-                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-swap-alt"></i><span>User Interface (UI)</span> </a>
-                        <ul class="ml-menu">
-                            <li> <a href="ui_kit.html">UI KIT</a> </li>                    
-                            <li> <a href="alerts.html">Alerts</a> </li>                    
-                            <li> <a href="collapse.html">Collapse</a> </li>
-                            <li> <a href="colors.html">Colors</a> </li>
-                            <li> <a href="dialogs.html">Dialogs</a> </li>
-                            <li> <a href="icons.html">Icons</a> </li>                    
-                            <li> <a href="list-group.html">List Group</a> </li>
-                            <li> <a href="media-object.html">Media Object</a> </li>
-                            <li> <a href="modals.html">Modals</a> </li>
-                            <li> <a href="notifications.html">Notifications</a></li>                    
-                            <li> <a href="progressbars.html">Progress Bars</a></li>
-                            <li> <a href="range-sliders.html">Range Sliders</a></li>
-                            <li> <a href="sortable-nestable.html">Sortable & Nestable</a></li>
-                            <li> <a href="tabs.html">Tabs</a></li>
-                            <li> <a href="waves.html">Waves</a></li>
-                        </ul>
-                    </li>
-                    <li class="header">FORMS, CHARTS, TABLES</li>
-                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-assignment"></i><span>Forms</span> </a>
-                        <ul class="ml-menu">
-                            <li><a href="basic-form-elements.html">Basic Form Elements</a> </li>
-                            <li><a href="advanced-form-elements.html">Advanced Form Elements</a> </li>
-                            <li><a href="form-examples.html">Form Examples</a> </li>
-                            <li><a href="form-validation.html">Form Validation</a> </li>
-                            <li><a href="form-wizard.html">Form Wizard</a> </li>
-                            <li><a href="form-editors.html">Editors</a> </li>
-                            <li><a href="form-upload.html">File Upload</a></li>
-                        </ul>
-                    </li>
-                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-grid"></i><span>Tables</span> </a>
-                        <ul class="ml-menu">                        
-                            <li> <a href="normal-tables.html">Normal Tables</a> </li>
-                            <li> <a href="jquery-datatable.html">Jquery Datatables</a> </li>
-                            <li> <a href="editable-table.html">Editable Tables</a> </li>
-                            <li> <a href="footable.html">Foo Tables</a> </li>
-                            <li> <a href="table-color.html">Tables Color</a> </li>
-                        </ul>
-                    </li>            
-                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-chart"></i><span>Charts</span> </a>
-                        <ul class="ml-menu">
-                            <li> <a href="morris.html">Morris</a> </li>
-                            <li> <a href="flot.html">Flot</a> </li>
-                            <li> <a href="chartjs.html">ChartJS</a> </li>
-                            <li> <a href="sparkline.html">Sparkline</a> </li>
-                            <li> <a href="jquery-knob.html">Jquery Knob</a> </li>
-                        </ul>
-                    </li>
-                    <li class="header">EXTRA COMPONENTS</li>
-                    <li class="active open"> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-shopping-cart"></i><span>Ecommerce</span> </a>
-                        <ul class="ml-menu">
-                            <li> <a href="ec-dashboard.html">Dashboard</a></li>
-                            <li class="active"> <a href="ec-product.html">Product</a></li>
-                            <li> <a href="ec-product-List.html">Product List</a></li>
-                            <li> <a href="ec-product-detail.html">Product detail</a></li>
-                        </ul>
-                    </li>
-                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-delicious"></i><span>Widgets</span> </a>
-                        <ul class="ml-menu">
-                            <li><a href="widgets-app.html">Apps Widgets</a></li>
-                            <li><a href="widgets-data.html">Data Widgets</a></li>
-                        </ul>
-                    </li>
-                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-lock"></i><span>Authentication</span> </a>
-                        <ul class="ml-menu">
-                            <li><a href="sign-in.html">Sign In</a> </li>
-                            <li><a href="sign-up.html">Sign Up</a> </li>
-                            <li><a href="forgot-password.html">Forgot Password</a> </li>
-                            <li><a href="404.html">Page 404</a> </li>
-                            <li><a href="500.html">Page 500</a> </li>
-                            <li><a href="page-offline.html">Page Offline</a> </li>
-                            <li><a href="locked.html">Locked Screen</a> </li>
-                        </ul>
-                    </li>
-                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-copy"></i><span>Sample Pages</span> </a>
-                        <ul class="ml-menu">
-                            <li><a href="blank.html">Blank Page</a> </li>
-                            <li> <a href="image-gallery.html">Image Gallery</a> </li>
-                            <li><a href="profile.html">Profile</a></li>
-                            <li><a href="timeline.html">Timeline</a></li>
-                            <li><a href="pricing.html">Pricing</a></li>
-                            <li><a href="invoices.html">Invoices</a></li>
-                            <li><a href="search-results.html">Search Results</a></li>
-                        </ul>
-                    </li>
-                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-map"></i><span>Maps</span> </a>
-                        <ul class="ml-menu">
-                            <li> <a href="google.html">Google Map</a> </li>
-                            <li> <a href="yandex.html">YandexMap</a> </li>
-                            <li> <a href="jvectormap.html">jVectorMap</a> </li>
-                        </ul>
-                    </li>
-                    <li class="header">Extra</li>
-                    <li>
-                        <div class="progress-container progress-primary m-t-10">
-                            <span class="progress-badge">Traffic this Month</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="width: 67%;">
-                                    <span class="progress-value">67%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-container progress-info">
-                            <span class="progress-badge">Server Load</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
-                                    <span class="progress-value">86%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+
                 </ul>
             </div>
         </aside>
@@ -346,7 +223,6 @@
         <aside id="rightsidebar" class="right-sidebar">
             <ul class="nav nav-tabs">
                 <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#setting"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#chat"><i class="zmdi zmdi-comments"></i></a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#activity">Activity</a></li>
             </ul>
             <div class="tab-content">
@@ -434,302 +310,22 @@
                         </div>
                     </div>                
                 </div>       
-                <div class="tab-pane right_chat pullUp" id="chat">
-                    <div class="slim_scroll">
-                        <div class="card">
-                            <div class="search">                        
-                                <div class="input-group">
-                                    <input type="text" onclick="" class="form-control" placeholder="Search...">
-                                    <span class="input-group-addon">
-                                        <i class="zmdi zmdi-search"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <h6>Recent</h6>
-                            <ul class="list-unstyled">
-                                <li class="online">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar4.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="name">Sophia</span>
-                                                <span class="message">There are many variations of passages of Lorem Ipsum available</span>
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>                            
-                                </li>
-                                <li class="online">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar5.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="name">Grayson</span>
-                                                <span class="message">All the Lorem Ipsum generators on the</span>
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>                            
-                                </li>
-                                <li class="offline">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar2.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="name">Isabella</span>
-                                                <span class="message">Contrary to popular belief, Lorem Ipsum</span>
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>                            
-                                </li>
-                                <li class="me">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar1.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="name">John</span>
-                                                <span class="message">It is a long established fact that a reader</span>
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>                            
-                                </li>
-                                <li class="online">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar3.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="name">Alexander</span>
-                                                <span class="message">Richard McClintock, a Latin professor</span>
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>                            
-                                </li>                        
-                            </ul>
-                        </div>
-                        <div class="card">
-                            <h6>Contacts</h6>
-                            <ul class="list-unstyled">
-                                <li class="offline inlineblock">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar10.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="offline inlineblock">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar6.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="offline inlineblock">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar7.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="offline inlineblock">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar8.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="offline inlineblock">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar9.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="online inlineblock">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar5.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="offline inlineblock">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar4.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="offline inlineblock">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar3.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="online inlineblock">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar2.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="offline inlineblock">
-                                    <a href="javascript:void(0);">
-                                        <div class="media">
-                                            <img class="media-object " src="assets/images/xs/avatar1.jpg" alt="">
-                                            <div class="media-body">
-                                                <span class="badge badge-outline status"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+               
                 <div class="tab-pane slideRight" id="activity">
                     <div class="slim_scroll">
                         <div class="card">
-                            <h6>Recent Activity</h6>
+
                             <ul class="list-unstyled activity">
                                 <li>
                                     <a href="javascript:void(0)">
-                                        <i class="zmdi zmdi-cake bg-blue"></i>                    
-                                        <div class="info">
-                                            <h4>Admin Birthday</h4>                    
-                                            <small>Will be Dec 21th</small>
-                                        </div>
+                                        <a href="${pageContext.request.contextPath}/sign-in.jsp" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign in</a>
+                                        <a href="${pageContext.request.contextPath}/sign-up.jsp" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign up</a>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <i class="zmdi zmdi-file-text bg-red"></i>
-                                        <div class="info">
-                                            <h4>Code Change</h4>                    
-                                            <small>Will be Dec 22th</small>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <i class="zmdi zmdi-account-box-phone bg-green"></i>
-                                        <div class="info">
-                                            <h4>Add New Contact</h4>                    
-                                            <small>Will be Dec 23th</small>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <i class="zmdi zmdi-email bg-amber"></i>
-                                        <div class="info">
-                                            <h4>New Email</h4>
-                                            <small>Will be July 28th</small>
-                                        </div>
-                                    </a>
-                                </li>
+
                             </ul>
                         </div>
-                        <div class="card">
-                            <h6>Project Status</h6>
-                            <div class="progress-container progress-primary">
-                                <span class="progress-badge">eCommerce Website</span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
-                                        <span class="progress-value">86%</span>
-                                    </div>
-                                </div>                        
-                                <ul class="list-unstyled team-info">
-                                    <li class="m-r-15"><small>Team</small></li>
-                                    <li>
-                                        <img src="assets/images/xs/avatar2.jpg" alt="Avatar">
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/xs/avatar3.jpg" alt="Avatar">
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/xs/avatar4.jpg" alt="Avatar">
-                                    </li>                            
-                                </ul>
-                            </div>
-                            <div class="progress-container">
-                                <span class="progress-badge">iOS Game Dev</span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                                        <span class="progress-value">45%</span>
-                                    </div>
-                                </div>
-                                <ul class="list-unstyled team-info">
-                                    <li class="m-r-15"><small>Team</small></li>
-                                    <li>
-                                        <img src="assets/images/xs/avatar10.jpg" alt="Avatar">
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/xs/avatar9.jpg" alt="Avatar">
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/xs/avatar8.jpg" alt="Avatar">
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/xs/avatar7.jpg" alt="Avatar">
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/xs/avatar6.jpg" alt="Avatar">
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="progress-container progress-warning">
-                                <span class="progress-badge">Home Development</span>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100" style="width: 29%;">
-                                        <span class="progress-value">29%</span>
-                                    </div>
-                                </div>
-                                <ul class="list-unstyled team-info">
-                                    <li class="m-r-15"><small>Team</small></li>
-                                    <li>
-                                        <img src="assets/images/xs/avatar5.jpg" alt="Avatar">
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/xs/avatar2.jpg" alt="Avatar">
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/xs/avatar7.jpg" alt="Avatar">
-                                    </li>                            
-                                </ul>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -841,7 +437,6 @@
                                                     <img src="assets/images/ecommerce/9.png" alt="Product" class="img-fluid" />
                                                     <div class="hover">
                                                         <a href="javascript:void(0);" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
-                                                        <a href="javascript:void(0);" class="btn btn-primary waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
                                                     </div>
                                                 </div>
                                                 <div class="product_details">
@@ -888,10 +483,10 @@
                                         <div class="card product_item">
                                             <div class="body">
                                                 <div class="cp_img">
-                                                    <img src="assets/images/ecommerce/9.png" alt="Product" class="img-fluid" />
+                                                    
+                                                    <img src="data:image/jpeg;base64,${applicationScope.products.get(i).productImage}" alt="Product" class="img-fluid" />
                                                     <div class="hover">
                                                         <a href="javascript:void(0);" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
-                                                        <a href="javascript:void(0);" class="btn btn-primary waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
                                                     </div>
                                                 </div>
                                                 <div class="product_details">
@@ -933,10 +528,9 @@
                                     <div class="card product_item">
                                         <div class="body">
                                             <div class="cp_img">
-                                                <img src="assets/images/ecommerce/9.png" alt="Product" class="img-fluid" />
+                                                <img src="data:image/jpeg;base64,${applicationScope.products.get(i).productImage}" alt="Product" class="img-fluid" />
                                                 <div class="hover">
                                                     <a href="javascript:void(0);" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
-                                                    <a href="javascript:void(0);" class="btn btn-primary waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
                                                 </div>
                                             </div>
                                             <div class="product_details">

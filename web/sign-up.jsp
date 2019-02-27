@@ -75,7 +75,7 @@
             <div class="container">
                 <div class="col-md-12 content-center">
                     <div class="card-plain">
-                        <form class="form" action="SignUpController" method="post" name="registerform" onSubmit="return validateForm()">
+                        <form class="form" action="/Marketo/sign-up" method="post" name="registerform" onSubmit="return validateForm()">
                             <div class="header">
                                 <div class="logo-container">
                                     <img src="assets/images/logo.svg" alt="">
@@ -108,9 +108,15 @@
                                     </span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="text" name="emailAddress" class="form-control" placeholder="Enter Email">
+                                    <input type="email" name="emailAddress" class="form-control" placeholder="Enter Email">
                                     <span class="input-group-addon">
                                         <i class="zmdi zmdi-email"></i>
+                                    </span>
+                                </div>
+                                <div class="input-group">
+                                    <input type="address" name="Address" class="form-control" placeholder="Enter Your Address">
+                                    <span class="input-group-addon">
+                                        <i class="zmdi zmdi-pin"></i>
                                     </span>
                                 </div>
                                 <div class="input-group">
@@ -128,7 +134,7 @@
                             </div>
                             <div class="footer text-center">
                                 <input type="submit" value="SIGN UP" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light"/>
-                                <h6 class="m-t-20"><a class="link" href="sign-in.jsp">You already have a membership?</a></h6>
+                                <h6 class="m-t-20"><a class="link" href="/Marketo/sign-in">You already have a membership?</a></h6>
                             </div>
                         </form>
                     </div>
@@ -168,6 +174,7 @@
                 var lastName = document.registerform.lastName;
                 var userName = document.registerform.userName;
                 var email = document.registerform.emailAddress;
+                var address = document.registerform.Address;
                 var password = document.registerform.password;
 
                 var letters = /^[A-Za-z]+$/;
@@ -204,6 +211,12 @@
                     alert("email not correct");
                     email.style.background = '#f08080';
                     email.focus();
+                    return false;
+                }
+                if (!address.value.match(regAdd)) {
+                    alert("Address not correct");
+                    address.style.background = '#f08080';
+                    address.focus();
                     return false;
                 }
                 if (!password.value.match(upassreg)) {
