@@ -3,8 +3,8 @@
     Created on : Feb 23, 2019, 6:06:03 PM
     Author     : elmahask
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 ﻿<!doctype html>
 <html class="no-js " lang="en">
     <head>
@@ -12,8 +12,10 @@
         <!--<meta http-equiv="X-UA-Compatible" content="IE=Edge">-->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <title>Sign-In</title>
+        
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+        
         <!-- Custom Css -->
         <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/main.css">

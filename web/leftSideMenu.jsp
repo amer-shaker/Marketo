@@ -14,7 +14,7 @@
                                                                    alt="User"></a></div>
                     <div class="detail">
                         <h4>Amer</h4>
-                        <small>Web And Mobile Developer</small>
+                        <small>Web & Mobile Developer</small>
                     </div>
                     <a href="ec-users.jsp" title="Contact List"><i class="zmdi zmdi-account-box-phone"></i></a>
                     <a href="profile.jsp" title="Profile"><i class="material-icons">account_box</i></a>

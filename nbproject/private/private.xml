@@ -3,24 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/D:/ITI%20Intake%2039%20-%20Web%20&amp;%20Mobile%20Applications%20Development/Courses/Done/21-%20Developing%20Dynamic%20Web%20Applications%20using%20Servlets%20and%20JSP%20-%20Mohsen%20Diab/Project/Marketo/web/ec-users.jsp</file>
-            <file>file:/D:/ITI%20Intake%2039%20-%20Web%20&amp;%20Mobile%20Applications%20Development/Courses/Done/21-%20Developing%20Dynamic%20Web%20Applications%20using%20Servlets%20and%20JSP%20-%20Mohsen%20Diab/Project/Marketo/web/pageHeader.jsp</file>
-            <file>file:/D:/ITI%20Intake%2039%20-%20Web%20&amp;%20Mobile%20Applications%20Development/Courses/Done/21-%20Developing%20Dynamic%20Web%20Applications%20using%20Servlets%20and%20JSP%20-%20Mohsen%20Diab/Project/Marketo/web/leftSideMenu.jsp</file>
-            <file>file:/D:/ITI%20Intake%2039%20-%20Web%20&amp;%20Mobile%20Applications%20Development/Courses/Done/21-%20Developing%20Dynamic%20Web%20Applications%20using%20Servlets%20and%20JSP%20-%20Mohsen%20Diab/Project/Marketo/web/ec-recent-orders.jsp</file>
-            <file>file:/D:/ITI%20Intake%2039%20-%20Web%20&amp;%20Mobile%20Applications%20Development/Courses/Done/21-%20Developing%20Dynamic%20Web%20Applications%20using%20Servlets%20and%20JSP%20-%20Mohsen%20Diab/Project/Marketo/web/rightSideMenu.jsp</file>
-=======
-            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/database/UserDAO.java</file>
-            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/utils/Constants.java</file>
-            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/sign-in.jsp</file>
-            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/ec-recent-orders.jsp</file>
-            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/LogoutController.java</file>
-            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/database/ProductDAO.java</file>
-            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/LoginController.java</file>
-            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/ec-product.jsp</file>
-            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/utils/Utility.java</file>
->>>>>>> 4364d47819bcbc2f2bc8058f81165880ba3a985d
+            <file>file:/D:/ITI%20Intake%2039%20-%20Web%20&amp;%20Mobile%20Applications%20Development/Courses/Done/21-%20Developing%20Dynamic%20Web%20Applications%20using%20Servlets%20and%20JSP%20-%20Mohsen%20Diab/Project/Marketo/src/java/database/OrderDAO.java</file>
+            <file>file:/D:/ITI%20Intake%2039%20-%20Web%20&amp;%20Mobile%20Applications%20Development/Courses/Done/21-%20Developing%20Dynamic%20Web%20Applications%20using%20Servlets%20and%20JSP%20-%20Mohsen%20Diab/Project/Marketo/web/CartPage.jsp</file>
+            <file>file:/D:/ITI%20Intake%2039%20-%20Web%20&amp;%20Mobile%20Applications%20Development/Courses/Done/21-%20Developing%20Dynamic%20Web%20Applications%20using%20Servlets%20and%20JSP%20-%20Mohsen%20Diab/Project/Marketo/src/java/database/CategoryDAO.java</file>
+            <file>file:/D:/ITI%20Intake%2039%20-%20Web%20&amp;%20Mobile%20Applications%20Development/Courses/Done/21-%20Developing%20Dynamic%20Web%20Applications%20using%20Servlets%20and%20JSP%20-%20Mohsen%20Diab/Project/Marketo/web/404.jsp</file>
+            <file>file:/D:/ITI%20Intake%2039%20-%20Web%20&amp;%20Mobile%20Applications%20Development/Courses/Done/21-%20Developing%20Dynamic%20Web%20Applications%20using%20Servlets%20and%20JSP%20-%20Mohsen%20Diab/Project/Marketo/src/java/database/DBConnection.java</file>
+            <file>file:/D:/ITI%20Intake%2039%20-%20Web%20&amp;%20Mobile%20Applications%20Development/Courses/Done/21-%20Developing%20Dynamic%20Web%20Applications%20using%20Servlets%20and%20JSP%20-%20Mohsen%20Diab/Project/Marketo/web/sign-in.jsp</file>
+            <file>file:/D:/ITI%20Intake%2039%20-%20Web%20&amp;%20Mobile%20Applications%20Development/Courses/Done/21-%20Developing%20Dynamic%20Web%20Applications%20using%20Servlets%20and%20JSP%20-%20Mohsen%20Diab/Project/Marketo/src/java/database/CartDAO.java</file>
+            <file>file:/D:/ITI%20Intake%2039%20-%20Web%20&amp;%20Mobile%20Applications%20Development/Courses/Done/21-%20Developing%20Dynamic%20Web%20Applications%20using%20Servlets%20and%20JSP%20-%20Mohsen%20Diab/Project/Marketo/src/java/servlets/LoginController.java</file>
         </group>
     </open-files>
 </project-private>
