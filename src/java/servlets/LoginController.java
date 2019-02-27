@@ -103,7 +103,7 @@ public class LoginController extends HttpServlet {
 //                    response.sendRedirect(request.getContextPath() + "/sign-up.jsp");
                 } else {
                     System.out.println("User Check is Full");
-                    response.sendRedirect("/home");
+                    response.sendRedirect(request.getContextPath()+"/home");
 //                    response.sendRedirect(request.getContextPath() + "/home");
 //                    request.getRequestDispatcher(request.getContextPath() + "/home").forward(request, response);
                 }
