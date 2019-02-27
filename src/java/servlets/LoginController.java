@@ -84,18 +84,17 @@ public class LoginController extends HttpServlet {
 //                    response.sendRedirect("/LoginController");
                     System.out.println("User Is admin and Check is Null");
 
-                    response.sendRedirect(request.getContextPath() + "/AddProductServlet");
+//                    response.sendRedirect(request.getContextPath() + "/AddProductServlet");
 
                 } else {
                     System.out.println("User Is admin and Check is Full");
-                    response.sendRedirect(request.getContextPath() + "/AddProductServlet");
+//                    response.sendRedirect(request.getContextPath() + "/AddProductServlet");
 //                    request.getRequestDispatcher(request.getContextPath() + "/AddProductServlet").forward(request, response);
                 }
 
             } else if ((user != null) && (user.isAdmin() == false)) {
                 createSession(request, "userObj", user, true);
 //                request.getRequestDispatcher(request.getContextPath() + "/home").forward(request, response);
-
                 if (checkBox != null) {
                     createCookie(response, "userNameObj", user.getUserName());
                     createCookie(response, "userEmailObj", user.getEmailAddress());
@@ -104,7 +103,8 @@ public class LoginController extends HttpServlet {
 //                    response.sendRedirect(request.getContextPath() + "/sign-up.jsp");
                 } else {
                     System.out.println("User Check is Full");
-                    response.sendRedirect(request.getContextPath() + "/home");
+                    response.sendRedirect("/home");
+//                    response.sendRedirect(request.getContextPath() + "/home");
 //                    request.getRequestDispatcher(request.getContextPath() + "/home").forward(request, response);
                 }
             }

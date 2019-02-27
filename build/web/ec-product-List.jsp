@@ -237,15 +237,16 @@
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>App</span>
                         </a>
                         <ul class="ml-menu">
-                            <li><a href="ec-contact.html">Contact list</a></li>
+                            <li> <a href="ec-dashboard.jsp">Dashboard</a></li>                            
                         </ul>
                     </li>
                     <li class="active open"> <a href="javascript:void(0);" class="menu-toggle"><i
                                 class="zmdi zmdi-shopping-cart"></i><span>Ecommerce</span> </a>
                         <ul class="ml-menu">
-                            <li> <a href="ec-dashboard.html">Dashboard</a></li>
+                            <li> <a href="ec-users.jsp">Users List</a></li>                            
+                            <li> <a href="ec-recent-orders.jsp">Recent Orders</a></li>
                             <li class="active"> <a href="ec-product-List.jsp">Product List</a></li>
-                            <li> <a href="ec-add-product.jsp">Add Product</a></li>
+                            <li> <a href="ec-add-product.jsp">Add / Edit Products</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -652,7 +653,7 @@
                         </form>
                         <ul class="breadcrumb float-md-right">
                             <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Marketo</a></li>
-                            <li class="breadcrumb-item"><a href="ec-dashboard.html">eCommerce</a></li>
+                            <li class="breadcrumb-item"><a href="ec-recent-orders.jsp">eCommerce</a></li>
                             <li class="breadcrumb-item active">Product List</li>
                         </ul>
                     </div>
@@ -715,12 +716,9 @@
                                                     <td>
                                                         <form action="ProductListServlet" method="POST">
                                                             <input type="hidden" name="productId" value="${product.productId}" />
-                                                            <button name="actionType" value="editProduct" type="submit" class="btn btn-default waves-effect waves-float waves-green"><i class="zmdi zmdi-edit"></i></button>
-                                                            <button name="actionType" value="deleteProduct" type="submit" class="btn btn-default waves-effect waves-float waves-red"><i class="zmdi zmdi-delete"></i></button>
+                                                            <button name="actionType" value="editProduct" type="submit" class="btn btn-default btn-icon btn-simple btn-icon-mini btn-round"><i class="zmdi zmdi-edit"></i></button>
+                                                            <button name="actionType" value="deleteProduct" type="submit" class="btn btn-default btn-icon btn-simple btn-icon-mini btn-round"><i class="zmdi zmdi-delete"></i></button> 
                                                         </form>
-                                                        <!--                                                        <div class="container-fluid row clearfix js-sweetalert col-md-12 col-lg-6">
-                                                                                                                    <button class="btn btn-raised btn-primary waves-effect btn-round" data-type="confirm">CLICK ME</button>
-                                                                                                                </div>  -->
                                                     </td>
                                                 </tr>
                                             </c:forEach>
@@ -729,6 +727,9 @@
                                 </table>
                             </div>
                         </div>
+                        <!--                        <div class="row clearfix js-sweetalert col-md-12 col-lg-6">
+                                                    <button class="btn btn-raised btn-primary waves-effect btn-round" data-type="confirm">CLICK ME</button>
+                                                </div>                            -->
                         <div class="card">
                             <div class="body">
                                 <ul class="pagination pagination-primary m-b-0">

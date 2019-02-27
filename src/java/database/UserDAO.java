@@ -186,6 +186,48 @@ public class UserDAO {
         return updateResult;
     }
 
+    public UserBean getUserById(int userId) throws SQLException {
+
+        UserBean user = new UserBean();
+
+        try {
+            preparedStatement = connection.prepareStatement("SELECT * FROM " + USERS_TABLE
+                    + " WHERE " + USER_ID + " = ?");
+            preparedStatement.setInt(1, userId);
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet != null) {
+                while (resultSet.next()) {
+                    user.setUserId(resultSet.getInt(USER_ID));
+                    user.setFirstName(resultSet.getString(FIRST_NAME));
+                    user.setLastName(resultSet.getString(LAST_NAME));
+                    user.setUserName(resultSet.getString(USER_NAME));
+                    user.setPassword(resultSet.getString(PASSWORD));
+                    user.setEmailAddress(resultSet.getString(EMAIL_ADDRESS));
+                    user.setAddress(resultSet.getString(ADDRESS));
+                    user.setJobTitle(resultSet.getString(JOB_TITLE));
+                    user.setDateOfBirth(resultSet.getString(BIRTH_DATE));
+                    user.setCardNumber(resultSet.getLong(CARD_NUMBER));
+                    user.setImage(resultSet.getBlob(IMAGE) + "");
+
+                    // Check if the user is Admin
+                    int userRole = resultSet.getInt(IS_ADMIN);
+                    if (userRole != 0) {
+                        user.setAdmin(true);
+                    } else {
+                        user.setAdmin(false);
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        } finally {
+            closeResources();
+        }
+
+        return user;
+    }
+
     public ArrayList<UserBean> getUsers() throws SQLException {
 
         ArrayList<UserBean> users = new ArrayList<>();

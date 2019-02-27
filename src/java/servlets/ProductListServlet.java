@@ -30,7 +30,8 @@ public class ProductListServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         try {
             products = productDAO.getProducts();
             req.setAttribute(Constants.PRODUCTS_LIST_ATTRIBUTE, products);
@@ -40,7 +41,8 @@ public class ProductListServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         if (req != null) {
             String actionType = req.getParameter(Constants.ACTION_TYPE_PARAMETER);
 

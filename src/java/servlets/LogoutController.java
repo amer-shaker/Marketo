@@ -34,7 +34,8 @@ public class LogoutController extends HttpServlet {
         if (session != null) {
             session.invalidate();
         }
-        request.getRequestDispatcher("/home").forward(request, response);
+//        request.getRequestDispatcher("/home").forward(request, response);
+        response.sendRedirect(request.getContextPath()+"/home");
     }
 
     @Override
@@ -45,7 +46,8 @@ public class LogoutController extends HttpServlet {
         if (session != null) {
             session.invalidate();
         }
-        request.getRequestDispatcher("/sign-in").forward(request, response);
+//        request.getRequestDispatcher("/sign-in").forward(request, response);
+        response.sendRedirect("/sign-in");
     }
 
     @Override

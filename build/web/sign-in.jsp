@@ -72,7 +72,7 @@
             <div class="container">
                 <div class="col-md-12 content-center">
                     <div class="card-plain">
-                        <form class="form" action="/Marketo/sign-in" method="post" name="registerform" onSubmit="return validateForm()">
+                        <form class="form" action="${pageContext.request.contextPath}/sign-in" method="post" name="registerform" onSubmit="return validateForm()">
                             <div class="header">
                                 <div class="logo-container">
                                     <img src="assets/images/logo.svg" alt="">

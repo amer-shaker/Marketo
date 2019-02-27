@@ -3,6 +3,9 @@ package utils;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import org.apache.tomcat.util.codec.binary.Base64;
 
 /**
@@ -37,5 +40,14 @@ public class Utility {
         }
 
         return imageURL;
+    }
+
+    public static String getFormatedDate(Date date) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.SIMPLE_DATE_FORMAT_REGEX, Locale.US);
+        if (date != null) {
+            return dateFormat.format(date);
+        } else {
+            return "";
+        }
     }
 }
