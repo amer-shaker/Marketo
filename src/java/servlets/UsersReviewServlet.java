@@ -51,7 +51,7 @@ public class UsersReviewServlet extends HttpServlet {
     private List<UserBean> getUsers() {
         UserDAO userDao = new UserDAO();
         try {
-            return userDao.getUsers();
+            return userDao.getUsersAccounts();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
