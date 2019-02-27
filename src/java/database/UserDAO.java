@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import utils.Utility;
@@ -268,6 +269,40 @@ public class UserDAO {
             closeResources();
         }
 
+        return users;
+    }
+
+    public List<UserBean> getUsersAccounts() throws SQLException {
+
+        List<UserBean> users = new ArrayList<>();
+
+        String selectUserQuery = "SELECT "
+                + USER_ID + ", "
+                + USER_NAME + ", "
+                + EMAIL_ADDRESS + ", "
+                + ADDRESS + " FROM "
+                + USERS_TABLE
+                + " ORDER BY "
+                + USER_ID + " ASC";
+        try {
+            preparedStatement = connection.prepareStatement(selectUserQuery);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                UserBean user = new UserBean();
+                user.setUserId(resultSet.getInt(USER_ID));
+                user.setUserName(resultSet.getString(USER_NAME));
+                user.setEmailAddress(resultSet.getString(EMAIL_ADDRESS));
+                user.setPhoneNumber("123456789");
+                user.setAddress(resultSet.getString(ADDRESS));
+                users.add(user);
+            }
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        } finally {
+            closeResources();
+        }
         return users;
     }
 

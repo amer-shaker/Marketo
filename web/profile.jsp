@@ -3,7 +3,6 @@
 <!doctype html>
 <html class="no-js " lang="en">
 
-    <!-- Mirrored from www.wrraptheme.com/templates/compass/html/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Feb 2019 13:03:20 GMT -->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -12,8 +11,10 @@
 
         <title>:: Compass Admin ::</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+
         <!-- Favicon-->
         <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
         <!-- Custom Css -->
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/timeline.css">
@@ -861,5 +862,4 @@
         <script src="assets/js/pages/charts/jquery-knob.js"></script>
     </body>
 
-    <!-- Mirrored from www.wrraptheme.com/templates/compass/html/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Feb 2019 13:06:20 GMT -->
 </html>

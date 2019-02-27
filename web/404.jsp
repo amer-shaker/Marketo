@@ -2,7 +2,6 @@
 ?<!doctype html>
 <html class="no-js " lang="en">
 
-<!-- Mirrored from www.wrraptheme.com/templates/compass/html/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Feb 2019 13:20:06 GMT -->
 <head>
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -10,8 +9,10 @@
     <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
 
     <title>:: Compass Bootstrap4 Admin ::</title>
+    
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
     <!-- Custom Css -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
