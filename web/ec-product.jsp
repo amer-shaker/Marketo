@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="assets/css/ecommerce.css">
         <link rel="stylesheet" href="assets/css/color_skins.css">
     </head>
-    <body class="theme-orange">
+    <body class="theme-cyan">
         <!-- Page Loader -->
         <div class="page-loader-wrapper">
             <div class="loader">
@@ -195,14 +195,14 @@
                     <c:if test="${userObj.firstName!=null}">
                         <li>
                             <div class="user-info">
-                                <div class="image"><a href="profile.html"><img src="assets/images/profile_av.jpg" alt="User"></a></div>
+                                <div class="image"><a href="${pageContext.request.contextPath}/profile.jsp"><img src="assets/images/profile_av.jpg" alt="User"></a></div>
                                 <div class="detail">
                                     <h4>${userObj.firstName}</h4>
                                     <small>${userObj.jobTitle}</small>                        
                                 </div>
-                                <a href="contact.html" title="Contact List"><i class="zmdi zmdi-account-box-phone"></i></a>
-                                <a href="${pageContext.request.contextPath}/UserProfileServlet" title="Chat App"><i class="zmdi zmdi-comments"></i></a>
+                                <a href="${pageContext.request.contextPath}/UserProfileServlet" title="Profile"><i class="zmdi zmdi-account"></i></a>
                                 <a href="${pageContext.request.contextPath}/Logout" title="Sign out"><i class="zmdi zmdi-power"></i></a>
+                                <a href="${pageContext.request.contextPath}/home" title="Home"><i class="zmdi zmdi-home"></i></a>
                             </div>
                         </li>
                     </c:if>
@@ -328,7 +328,7 @@
                                 <c:if test="${userObj!=null}">
                                 <li>
                                     <a href="javascript:void(0)">
-                                        <a href="${pageContext.request.contextPath}/home" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign out</a>
+                                        <a href="${pageContext.request.contextPath}/Logout" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign out</a>
                                     </a>
                                 </li>
                                 </c:if>
@@ -341,7 +341,7 @@
             </div>
         </aside>
 
-        <!-- Chat-launcher -->
+<!--         Chat-launcher 
         <div class="chat-launcher"></div>
         <div class="chat-wrapper">
             <div class="card">
@@ -401,14 +401,14 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <section class="content ecommerce-page">
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-7 col-md-6 col-sm-12">
                         <h2>Product
-                            <small class="text-muted">Welcome to Compass</small>
+                            <small class="text-muted">Welcome to Marketo</small>
                         </h2>
                     </div>
                     <div class="col-lg-5 col-md-6 col-sm-12">

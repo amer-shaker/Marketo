@@ -9,7 +9,7 @@
 <html class="no-js " lang="en">
     <head>
         <meta charset="utf-8">
-        <!--<meta http-equiv="X-UA-Compatible" content="IE=Edge">-->
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <title>Sign-In</title>
         <!-- Favicon-->
@@ -26,7 +26,7 @@
         <nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
             <div class="container">        
                 <div class="navbar-translate n_logo">
-                    <a class="navbar-brand" href="#" title="" target="_blank">COMPASS</a>
+                    <a class="navbar-brand" href="${pageContext.request.contextPath}/home" title="Home">Marketo</a>
                     <button class="navbar-toggler" type="button">
                         <span class="navbar-toggler-bar bar1"></span>
                         <span class="navbar-toggler-bar bar2"></span>
@@ -36,10 +36,7 @@
                 <div class="navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Marketo/home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Result</a>
+                            <a class="nav-link" href="${pageContext.request.contextPath}/home">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" title="Follow us on Twitter" href="#" target="_blank">
@@ -102,7 +99,7 @@
                             </div>
                             <div class="footer text-center">
                                 <input type="submit" value="SIGN IN" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light"/>
-                                <h6 class="m-t-20"><a href="forgot-password.html" class="link">Forgot Password?</a></h6>
+                                <h6 class="m-t-20"><a href="${pageContext.request.contextPath}/forgot-password.jsp" class="link">Forgot Password?</a></h6>
                             </div>
                         </form>
                     </div>

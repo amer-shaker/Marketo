@@ -9,7 +9,7 @@
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
 
-        <title>:: Compass Admin ::</title>
+        <title>Profile</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
         <!-- Favicon-->
@@ -23,7 +23,7 @@
         <!-- Page Loader -->
         <div class="page-loader-wrapper">
             <div class="loader">
-                <div class="m-t-30"><img class="zmdi-hc-spin" src="assets/images/logo.svg" width="48" height="48" alt="Compass"></div>
+                <div class="m-t-30"><img class="zmdi-hc-spin" src="assets/images/logo.svg" width="48" height="48" alt="Marketo"></div>
                 <p>Please wait...</p>
             </div>
         </div>
@@ -36,7 +36,7 @@
             <div class="col-12">        
                 <div class="navbar-header">
                     <a href="javascript:void(0);" class="bars"></a>
-                    <a class="navbar-brand" href="index.html"><img src="assets/images/logo.svg" width="30" alt="Compass"><span class="m-l-10">Compass</span></a>
+                    <a class="navbar-brand" href="index.html"><img src="assets/images/logo.svg" width="30" alt="Marketo"><span class="m-l-10">Compass</span></a>
                 </div>
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="javascript:void(0);" class="ls-toggle-btn" data-close="true"><i class="zmdi zmdi-swap"></i></a></li>            

@@ -94,9 +94,7 @@ public class UserDAO {
 
     public boolean addUser(String firstName, String lastName, String userName, String password,
             String emailAddress, String address, String phoneNumber) throws SQLException {
-
         boolean isSuccess = false;
-
         try {
             preparedStatement = connection.prepareStatement("INSERT INTO " + USERS_TABLE
                     + " (" + FIRST_NAME
@@ -114,7 +112,6 @@ public class UserDAO {
             preparedStatement.setString(4, password);
             preparedStatement.setString(5, emailAddress);
             preparedStatement.setString(6, address);
-
             isSuccess = preparedStatement.executeUpdate() > 0;
         } catch (SQLIntegrityConstraintViolationException ex) {
             System.err.println("The (User Name / Email Address) is already exists");
@@ -123,7 +120,6 @@ public class UserDAO {
         } finally {
             closeResources();
         }
-
         return isSuccess;
     }
 
@@ -188,9 +184,7 @@ public class UserDAO {
     }
 
     public UserBean getUserById(int userId) throws SQLException {
-
         UserBean user = new UserBean();
-
         try {
             preparedStatement = connection.prepareStatement("SELECT * FROM " + USERS_TABLE
                     + " WHERE " + USER_ID + " = ?");
@@ -222,6 +216,7 @@ public class UserDAO {
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
+            ex.printStackTrace();
         } finally {
             closeResources();
         }

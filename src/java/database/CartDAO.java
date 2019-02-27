@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package database;
 
 //import beans.ItemBean;
@@ -21,7 +16,6 @@ public class CartDAO {
 
     // Connection and Statement for creating queries
     // CART TABLE COLUMN
-
     public static final String USER_ID = "USER_ID";
     public static final String ORDER_LINE_ITEMS_TABLE = "ORDER_LINE_ITEMS";
     public static final String CART_TABLE = "CART";
@@ -33,7 +27,7 @@ public class CartDAO {
     private static final String PRODUCT_IMAGE = "IMAGE";
     private static final String CATEGORY_ID = "CATEGORY_ID";
     private static final String CART_ID = "CART_ID";
-int cart_id = 0;
+    int cart_id = 0;
     private Connection connection;
     private PreparedStatement preparedStatement;
     public ResultSet resultSet;
@@ -48,7 +42,6 @@ int cart_id = 0;
 
     public int getCartId(int userid) throws SQLException {
         int cart_id = 0;
-        
         try {
             preparedStatement = connection.prepareStatement("SELECT cart_id from " + CART_TABLE + " where user_id = ?");
             preparedStatement.setInt(1, userid);
@@ -62,7 +55,6 @@ int cart_id = 0;
         } finally {
             closeResources();
         }
-
         return cart_id;
     }
 
@@ -82,47 +74,45 @@ int cart_id = 0;
         }
     }
 
-    public boolean addProductToCart(int quantity, int product_id,int user_id) throws SQLException {
+    public boolean addProductToCart(int quantity, int product_id, int user_id) throws SQLException {
 
         boolean isSuccess = false;
-        boolean flag=false;
-       cart_id= getCartId(user_id);
-       items=getProductItems();
-         if(items!=null){
-           for (ItemsBean item:items)
-           {
-               if(item.getproductId()==product_id)
-               {
-                   flag=true;
-               }
-           }
+        boolean flag = false;
+        cart_id = getCartId(user_id);
+        items = getProductItems();
+        if (items != null) {
+            for (ItemsBean item : items) {
+                if (item.getproductId() == product_id) {
+                    flag = true;
+                }
             }
-         if(flag==false){
-       try {
-            
-            preparedStatement = connection.prepareStatement("insert into " + ORDER_LINE_ITEMS_TABLE + "(" + QUANTITY + "," + PRODUCT_ID + "," + CART_ID + ") values (?,?,?)");
-            preparedStatement.setInt(1, quantity);
-            preparedStatement.setInt(2, product_id);
-            preparedStatement.setInt(3, cart_id);
-            isSuccess = preparedStatement.executeUpdate() > 0;
+        }
+        if (flag == false) {
+            try {
 
-            System.out.println(cart_id);
-    
-       } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
-        } finally {
-            closeResources();
+                preparedStatement = connection.prepareStatement("insert into " + ORDER_LINE_ITEMS_TABLE + "(" + QUANTITY + "," + PRODUCT_ID + "," + CART_ID + ") values (?,?,?)");
+                preparedStatement.setInt(1, quantity);
+                preparedStatement.setInt(2, product_id);
+                preparedStatement.setInt(3, cart_id);
+                isSuccess = preparedStatement.executeUpdate() > 0;
+
+                System.out.println(cart_id);
+
+            } catch (SQLException ex) {
+                System.err.println(ex.getMessage());
+            } finally {
+                closeResources();
+            }
         }
 
-         } 
-    
-         return isSuccess;
+        return isSuccess;
     }
+
     public ArrayList<ItemsBean> getProductItems() throws SQLException {
 
         try {
             preparedStatement = connection.prepareStatement("SELECT product.PRODUCT_ID,product.PRODUCT_NAME,product.PRICE,ITEM.QUANTITY ,product.IMAGE FROM  product  product ,  ORDER_LINE_ITEMS item  WHERE product.PRODUCT_id = item.PRODUCT_id AND item.CART_ID = ? ");
-           preparedStatement.setInt(1, cart_id);
+            preparedStatement.setInt(1, cart_id);
             resultSet = preparedStatement.executeQuery();
 
             items = new ArrayList<>();

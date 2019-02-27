@@ -868,8 +868,10 @@
                                                 <td></td>
                                                 <td>
                                                     <c:if test="${requestScope.items.size()>0}">
+                                                        <form action="http://localhost:8084/Marketo/CheckOutServlet" method="Post">
                                                         <input value="CheckOut" class="btn btn-raised btn-primary btn-round waves-effect" type="submit" name="actionType"/>
-                                                    </c:if>            
+                                                    </form>
+                                                        </c:if>            
                                                 </td>
                                             </tr>
                                         </table>
