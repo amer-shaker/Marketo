@@ -41,7 +41,6 @@ public class CartDAO {
 
     public int getCartId(int userid) throws SQLException {
         int cart_id = 0;
-
         try {
             preparedStatement = connection.prepareStatement("SELECT cart_id from " + CART_TABLE + " where user_id = ?");
             preparedStatement.setInt(1, userid);
@@ -55,7 +54,6 @@ public class CartDAO {
         } finally {
             closeResources();
         }
-
         return cart_id;
     }
 
@@ -104,7 +102,6 @@ public class CartDAO {
             } finally {
                 closeResources();
             }
-
         }
 
         return isSuccess;

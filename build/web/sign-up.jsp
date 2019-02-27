@@ -7,7 +7,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-?<!doctype html>
+<!doctype html>
 <html class="no-js " lang="en">
     <head>
         <meta charset="utf-8">
@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
             <div class="container">        
                 <div class="navbar-translate n_logo">
-                    <a class="navbar-brand" href="#" title="" target="_blank">COMPASS</a>
+                    <a class="navbar-brand" href="${pageContext.request.contextPath}/home" title="Home">Marketo</a>
                     <button class="navbar-toggler" type="button">
                         <span class="navbar-toggler-bar bar1"></span>
                         <span class="navbar-toggler-bar bar2"></span>
@@ -39,11 +39,9 @@
                 <div class="navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="${pageContext.request.contextPath}/home">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search Result</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" title="Follow us on Twitter" href="#" target="_blank">
                                 <i class="zmdi zmdi-twitter"></i>
@@ -63,7 +61,7 @@
                             </a>
                         </li>                
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary btn-round" href="sign-in.html">SIGN IN</a>
+                            <a class="nav-link btn btn-primary btn-round" href="${pageContext.request.contextPath}/sign-in.jsp">SIGN IN</a>
                         </li>
                     </ul>
                 </div>
@@ -75,7 +73,7 @@
             <div class="container">
                 <div class="col-md-12 content-center">
                     <div class="card-plain">
-                        <form class="form" action="${pageContext.request.contextPath}/sign-in.jsp" method="post" name="registerform" onSubmit="return validateForm()">
+                        <form class="form" action="${pageContext.request.contextPath}/sign-up" method="post" name="registerform" onSubmit="return validateForm()">
                             <div class="header">
                                 <div class="logo-container">
                                     <img src="assets/images/logo.svg" alt="">
@@ -84,9 +82,7 @@
                                 <span>Register a new membership</span>
                             </div>
 
-                            <div class="content">  
-                                <jsp:useBean id="user" class="database.UserDAO" />
-                                <jsp:setProperty name="user" property="*"/><!--null-->
+                            <div class="content">
                                 <div class="input-group">
                                     <input type="text" name="firstName" class="form-control" placeholder="Enter First Name">
                                     <span class="input-group-addon">
@@ -134,7 +130,7 @@
                             </div>
                             <div class="footer text-center">
                                 <input type="submit" value="SIGN UP" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light"/>
-                                <h6 class="m-t-20"><a class="link" href="/Marketo/sign-in">You already have a membership?</a></h6>
+                                <h6 class="m-t-20"><a class="link" href="${pageContext.request.contextPath}/sign-in.jsp">You already have a membership?</a></h6>
                             </div>
                         </form>
                     </div>
@@ -180,22 +176,19 @@
                 var letters = /^[A-Za-z]+$/;
                 var username = /^[a-zA-Z0-9]+$/;
                 var unamereg = /^[a-zA-z]{8,15}/;
-                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
                 var umailreg = /^[a-zA-Z0-9._ - ]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
                 var numbers = /^[0-9]+$/;
-                var alphanumeric = /^[0-9a-zA-Z]+$/;
-                var regDOB = /^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})$/;
-                var regAdd = /^[A-Za-z0-9]+$/;
+                var regAdd = /^[A-Za-z0-9]|[ ]/;
                 var upassreg = /^[a-zA-z0-9]{5,10}/;
 
                 if (!firstName.value.match(letters)) {
-                    alert("First Name or email not correct");
+                    alert("First Name not correct");
                     firstName.style.background = '#f08080';
                     firstName.focus();
                     return false;
                 }
                 if (!lastName.value.match(letters)) {
-                    alert("Last Name or email not correct");
+                    alert("Last Name not correct");
                     lastName.style.background = '#f08080';
                     lastName.focus();
                     return false;
@@ -213,12 +206,12 @@
                     email.focus();
                     return false;
                 }
-                if (!address.value.match(regAdd)) {
-                    alert("Address not correct");
-                    address.style.background = '#f08080';
-                    address.focus();
-                    return false;
-                }
+//                if (!address.value.match(regAdd)) {
+//                    alert("Address not correct");
+//                    address.style.background = '#f08080';
+//                    address.focus();
+//                    return false;
+//                }
                 if (!password.value.match(upassreg)) {
                     alert("password must be between 5 to 10");
                     password.style.background = '#f08080';

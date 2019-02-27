@@ -19,21 +19,17 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "UserProfileServlet", urlPatterns = {"/UserProfileServlet"})
 public class UserProfileServlet extends HttpServlet {
-
+    
     private String userId;
     private final String USER_ATTRIBUTE = "user";
     private final String UPDATE_FORWARD = "updated";
     private UserDAO userDao = null;
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        System.out.println("param =" + request.getParameter("userId"));
-        //userId = (String) request.getParameter("userId");
-        UserBean usera = (UserBean) request.getSession(false).getAttribute("userObj");
-        System.out.println("hgsdfghsdfghsdfhg" + usera);
-        userId = String.valueOf(usera.getUserId());
-        usera.getUserId();
+        UserBean userObj = (UserBean) request.getSession(false).getAttribute("userObj");
+        userId = String.valueOf(userObj.getUserId());
+        userObj.getUserId();
 
         //get user from database
         UserBean user = new UserBean();
@@ -44,16 +40,22 @@ public class UserProfileServlet extends HttpServlet {
             dispatcher.forward(request, response);
         } else {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/sign-up.jsp");
-
             System.out.println("null");
         }
     }
-
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        processRequest(request, response);
     }
-
+    
     private UserBean getUserById(String userId) {
         userDao = new UserDAO();
         try {
@@ -63,5 +65,5 @@ public class UserProfileServlet extends HttpServlet {
         }
         return null;
     }
-
+    
 }

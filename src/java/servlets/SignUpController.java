@@ -16,10 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class SignUpController extends HttpServlet {
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         String firstName = request.getParameter("firstName").trim();
         String lastName = request.getParameter("lastName").trim();
         String userName = request.getParameter("userName").trim();
@@ -32,15 +30,26 @@ public class SignUpController extends HttpServlet {
             if (added == true) {
                 userDAO.AddUserIDToCart(emailAddress);
                 System.err.println("Register Done");
-                request.getRequestDispatcher(request.getContextPath() + "/sign-in.jsp").forward(request, response);
+                response.sendRedirect(request.getContextPath() + "/sign-in.jsp");
             } else {
                 System.err.println("failed");
-                request.getRequestDispatcher(request.getContextPath() + "/sign-up.jsp").forward(request, response);
+                response.sendRedirect(request.getContextPath() + "/404.jsp");
             }
         } catch (SQLException ex) {
             Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
         }
+    }
 
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }

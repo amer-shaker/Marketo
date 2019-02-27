@@ -33,6 +33,28 @@
         <!-- Overlay For Sidebars -->
         <div class="overlay"></div>
 
+=======
+        <title>:: Compass Bootstrap4 Admin ::</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <!-- Favicon-->
+        <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+        <!-- Custom Css -->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/color_skins.css">
+    </head>
+    <body class="theme-cyan">
+        <!-- Page Loader -->
+        <div class="page-loader-wrapper">
+            <div class="loader">
+                <div class="m-t-30"><img class="zmdi-hc-spin" src="assets/images/logo.svg" width="48" height="48" alt="Compass"></div>
+                <p>Please wait...</p>
+            </div>
+        </div>
+
+        <!-- Overlay For Sidebars -->
+        <div class="overlay"></div>
+
+>>>>>>> 154a9bd87496388ccf1ae4cf35753cf5c237e860
         <!-- Top Bar -->
         <nav class="navbar">
             <div class="col-12">        
@@ -357,9 +379,30 @@
                         <div class="card">
                             <h6>Skins</h6>
                             <ul class="choose-skin list-unstyled">
+<<<<<<< HEAD
                                 <li data-theme="cyan" class="active">
                                     <div class="cyan"></div>                    
                                 </li>
+=======
+                                <li data-theme="purple">
+                                    <div class="purple"></div>
+                                </li>                   
+                                <li data-theme="blue">
+                                    <div class="blue"></div>
+                                </li>
+                                <li data-theme="cyan" class="active">
+                                    <div class="cyan"></div>                    
+                                </li>
+                                <li data-theme="green">
+                                    <div class="green"></div>
+                                </li>
+                                <li data-theme="orange">
+                                    <div class="orange"></div>
+                                </li>
+                                <li data-theme="blush">
+                                    <div class="blush"></div>                    
+                                </li>
+>>>>>>> 154a9bd87496388ccf1ae4cf35753cf5c237e860
                             </ul>                    
                         </div>
                         <div class="card">
@@ -740,10 +783,17 @@
                         </li>
                         <li>
                             <img src="assets/images/xs/avatar6.jpg" alt="Avatar">
+<<<<<<< HEAD
                         </li>
                         <li>
                             <a href="javascript:void(0);" title="Add Member"><i class="zmdi zmdi-plus-circle"></i></a>
                         </li>
+=======
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" title="Add Member"><i class="zmdi zmdi-plus-circle"></i></a>
+                        </li>
+>>>>>>> 154a9bd87496388ccf1ae4cf35753cf5c237e860
                     </ul>                       
                 </div>
                 <div class="body">
@@ -756,6 +806,7 @@
                                     <span class="datetime">6:12</span>                            
                                     <span class="message">Hello, John </span>
                                 </div>
+<<<<<<< HEAD
                             </li>
                             <li class="right">
                                 <div class="chat-info"><span class="datetime">6:15</span> <span class="message">Hi, Alexander<br> How are you!</span> </div>
@@ -769,6 +820,21 @@
                             <li class="left float-left"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt="">
                                 <div class="chat-info"> <a class="name" href="javascript:void(0);">Michael</a> <span class="datetime">6:28</span> <span class="message">I would love to join the team.</span> </div>
                             </li>
+=======
+                            </li>
+                            <li class="right">
+                                <div class="chat-info"><span class="datetime">6:15</span> <span class="message">Hi, Alexander<br> How are you!</span> </div>
+                            </li>
+                            <li class="right">
+                                <div class="chat-info"><span class="datetime">6:16</span> <span class="message">There are many variations of passages of Lorem Ipsum available</span> </div>
+                            </li>
+                            <li class="left float-left"> <img src="assets/images/xs/avatar2.jpg" class="rounded-circle" alt="">
+                                <div class="chat-info"> <a class="name" href="javascript:void(0);">Elizabeth</a> <span class="datetime">6:25</span> <span class="message">Hi, Alexander,<br> John <br> What are you doing?</span> </div>
+                            </li>
+                            <li class="left float-left"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt="">
+                                <div class="chat-info"> <a class="name" href="javascript:void(0);">Michael</a> <span class="datetime">6:28</span> <span class="message">I would love to join the team.</span> </div>
+                            </li>
+>>>>>>> 154a9bd87496388ccf1ae4cf35753cf5c237e860
                             <li class="right">
                                 <div class="chat-info"><span class="datetime">7:02</span> <span class="message">Hello, <br>Michael</span> </div>
                             </li>
@@ -820,7 +886,10 @@
                                                     <th>Quantity</th>
                                                     <th>Total</th>
                                                     <th>Action</th>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 154a9bd87496388ccf1ae4cf35753cf5c237e860
                                                 </tr>
                                             </thead>
 
@@ -831,6 +900,7 @@
                                                         <td><%= itemnumber++%></td>
                                                         <td><img src="assets/images/ecommerce/2.png" width="40" alt="Product img"></td>
                                                         <td><c:out value="${item.productName}"/></td>
+<<<<<<< HEAD
                                                         <td><fmt:formatNumber value="${item.quantity}"/></td>
                                                         <td>><fmt:formatNumber value="${item.price}" type="currency" currencySymbol="$"/></td>
                                                         <td>
@@ -841,6 +911,38 @@
                                                     </tr>
                                                 </tbody>
                                             </c:forEach>   
+=======
+
+                                                        <td><fmt:formatNumber value="${item.quantity}"/></td>
+
+                                                        <td>><fmt:formatNumber value="${item.price}" type="currency" currencySymbol="$"/></td>
+                                                        <td>
+                                                            <form action="http://localhost:8084/Marketo/CartServlet" method="Post">
+
+
+                                                                <button name="productId" value="${item.productId}" type="submit" class="btn btn-default waves-effect waves-float waves-red"><i class="zmdi zmdi-delete"></i></button>
+                                                            </form>
+
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </c:forEach>   
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <c:if test="${requestScope.items.size()>0}">
+                                                        <form action="http://localhost:8084/Marketo/CheckOutServlet" method="Post">
+                                                        <input value="CheckOut" class="btn btn-raised btn-primary btn-round waves-effect" type="submit" name="actionType"/>
+                                                    </form>
+                                                        </c:if>            
+                                                </td>
+                                            </tr>
+>>>>>>> 154a9bd87496388ccf1ae4cf35753cf5c237e860
                                         </table>
                                     </div>
                                 </div>
@@ -852,6 +954,7 @@
                 </div>
             </div>
 
+<<<<<<< HEAD
         </section>
 
         <!-- Jquery Core Js --> 
@@ -861,4 +964,17 @@
         <script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js --> 
     </body>
 
+=======
+
+        </section>
+
+        <!-- Jquery Core Js --> 
+        <script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
+        <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
+
+        <script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js --> 
+    </body>
+
+    <!-- Mirrored from www.wrraptheme.com/templates/compass/html/invoices.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Feb 2019 13:24:45 GMT -->
+>>>>>>> 154a9bd87496388ccf1ae4cf35753cf5c237e860
 </html>

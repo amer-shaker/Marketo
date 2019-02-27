@@ -13,7 +13,10 @@
         <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
 
         <title>Marketo</title>
+
+        <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+        
         <!-- Favicon-->
         <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
         <!-- Custom Css -->
@@ -21,7 +24,7 @@
         <link rel="stylesheet" href="assets/css/ecommerce.css">
         <link rel="stylesheet" href="assets/css/color_skins.css">
     </head>
-    <body class="theme-orange">
+    <body class="theme-cyan">
         <!-- Page Loader -->
         <div class="page-loader-wrapper">
             <div class="loader">
@@ -195,14 +198,14 @@
                     <c:if test="${userObj.firstName!=null}">
                         <li>
                             <div class="user-info">
-                                <div class="image"><a href="profile.html"><img src="assets/images/profile_av.jpg" alt="User"></a></div>
+                                <div class="image"><a href="${pageContext.request.contextPath}/profile.jsp"><img src="assets/images/profile_av.jpg" alt="User"></a></div>
                                 <div class="detail">
                                     <h4>${userObj.firstName}</h4>
                                     <small>${userObj.jobTitle}</small>                        
                                 </div>
-                                <a href="contact.html" title="Contact List"><i class="zmdi zmdi-account-box-phone"></i></a>
-                                <a href="${pageContext.request.contextPath}/UserProfileServlet" title="Chat App"><i class="zmdi zmdi-comments"></i></a>
+                                <a href="${pageContext.request.contextPath}/UserProfileServlet" title="Profile"><i class="zmdi zmdi-account"></i></a>
                                 <a href="${pageContext.request.contextPath}/Logout" title="Sign out"><i class="zmdi zmdi-power"></i></a>
+                                <a href="${pageContext.request.contextPath}/home" title="Home"><i class="zmdi zmdi-home"></i></a>
                             </div>
                         </li>
                     </c:if>
@@ -310,29 +313,29 @@
                         </div>
                     </div>                
                 </div>       
-               
+
                 <div class="tab-pane slideRight" id="activity">
                     <div class="slim_scroll">
                         <div class="card">
 
                             <ul class="list-unstyled activity">
                                 <c:if test="${userObj==null}">
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <a href="${pageContext.request.contextPath}/sign-in.jsp" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign in</a>
-                                        <a href="${pageContext.request.contextPath}/sign-up.jsp" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign up</a>
-                                    </a>
-                                </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <a href="${pageContext.request.contextPath}/sign-in.jsp" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign in</a>
+                                            <a href="${pageContext.request.contextPath}/sign-up.jsp" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign up</a>
+                                        </a>
+                                    </li>
                                 </c:if>
-                               
+
                                 <c:if test="${userObj!=null}">
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <a href="${pageContext.request.contextPath}/home" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign out</a>
-                                    </a>
-                                </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <a href="${pageContext.request.contextPath}/Logout" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign out</a>
+                                        </a>
+                                    </li>
                                 </c:if>
-                               
+
                             </ul>
                         </div>
 
@@ -341,74 +344,74 @@
             </div>
         </aside>
 
-        <!-- Chat-launcher -->
-        <div class="chat-launcher"></div>
-        <div class="chat-wrapper">
-            <div class="card">
-                <div class="header">
-                    <ul class="list-unstyled team-info margin-0">
-                        <li class="m-r-15"><h2>Design Team</h2></li>
-                        <li>
-                            <img src="assets/images/xs/avatar2.jpg" alt="Avatar">
-                        </li>
-                        <li>
-                            <img src="assets/images/xs/avatar3.jpg" alt="Avatar">
-                        </li>
-                        <li>
-                            <img src="assets/images/xs/avatar4.jpg" alt="Avatar">
-                        </li>
-                        <li>
-                            <img src="assets/images/xs/avatar6.jpg" alt="Avatar">
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" title="Add Member"><i class="zmdi zmdi-plus-circle"></i></a>
-                        </li>
-                    </ul>                       
-                </div>
-                <div class="body">
-                    <div class="chat-widget">
-                        <ul class="chat-scroll-list clearfix">
-                            <li class="left float-left">
-                                <img src="assets/images/xs/avatar3.jpg" class="rounded-circle" alt="">
-                                <div class="chat-info">
-                                    <a class="name" href="#">Alexander</a>
-                                    <span class="datetime">6:12</span>                            
-                                    <span class="message">Hello, John </span>
-                                </div>
-                            </li>
-                            <li class="right">
-                                <div class="chat-info"><span class="datetime">6:15</span> <span class="message">Hi, Alexander<br> How are you!</span> </div>
-                            </li>
-                            <li class="right">
-                                <div class="chat-info"><span class="datetime">6:16</span> <span class="message">There are many variations of passages of Lorem Ipsum available</span> </div>
-                            </li>
-                            <li class="left float-left"> <img src="assets/images/xs/avatar2.jpg" class="rounded-circle" alt="">
-                                <div class="chat-info"> <a class="name" href="#">Elizabeth</a> <span class="datetime">6:25</span> <span class="message">Hi, Alexander,<br> John <br> What are you doing?</span> </div>
-                            </li>
-                            <li class="left float-left"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt="">
-                                <div class="chat-info"> <a class="name" href="#">Michael</a> <span class="datetime">6:28</span> <span class="message">I would love to join the team.</span> </div>
-                            </li>
-                            <li class="right">
-                                <div class="chat-info"><span class="datetime">7:02</span> <span class="message">Hello, <br>Michael</span> </div>
-                            </li>
-                        </ul>
+        <!--         Chat-launcher 
+                <div class="chat-launcher"></div>
+                <div class="chat-wrapper">
+                    <div class="card">
+                        <div class="header">
+                            <ul class="list-unstyled team-info margin-0">
+                                <li class="m-r-15"><h2>Design Team</h2></li>
+                                <li>
+                                    <img src="assets/images/xs/avatar2.jpg" alt="Avatar">
+                                </li>
+                                <li>
+                                    <img src="assets/images/xs/avatar3.jpg" alt="Avatar">
+                                </li>
+                                <li>
+                                    <img src="assets/images/xs/avatar4.jpg" alt="Avatar">
+                                </li>
+                                <li>
+                                    <img src="assets/images/xs/avatar6.jpg" alt="Avatar">
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" title="Add Member"><i class="zmdi zmdi-plus-circle"></i></a>
+                                </li>
+                            </ul>                       
+                        </div>
+                        <div class="body">
+                            <div class="chat-widget">
+                                <ul class="chat-scroll-list clearfix">
+                                    <li class="left float-left">
+                                        <img src="assets/images/xs/avatar3.jpg" class="rounded-circle" alt="">
+                                        <div class="chat-info">
+                                            <a class="name" href="#">Alexander</a>
+                                            <span class="datetime">6:12</span>                            
+                                            <span class="message">Hello, John </span>
+                                        </div>
+                                    </li>
+                                    <li class="right">
+                                        <div class="chat-info"><span class="datetime">6:15</span> <span class="message">Hi, Alexander<br> How are you!</span> </div>
+                                    </li>
+                                    <li class="right">
+                                        <div class="chat-info"><span class="datetime">6:16</span> <span class="message">There are many variations of passages of Lorem Ipsum available</span> </div>
+                                    </li>
+                                    <li class="left float-left"> <img src="assets/images/xs/avatar2.jpg" class="rounded-circle" alt="">
+                                        <div class="chat-info"> <a class="name" href="#">Elizabeth</a> <span class="datetime">6:25</span> <span class="message">Hi, Alexander,<br> John <br> What are you doing?</span> </div>
+                                    </li>
+                                    <li class="left float-left"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt="">
+                                        <div class="chat-info"> <a class="name" href="#">Michael</a> <span class="datetime">6:28</span> <span class="message">I would love to join the team.</span> </div>
+                                    </li>
+                                    <li class="right">
+                                        <div class="chat-info"><span class="datetime">7:02</span> <span class="message">Hello, <br>Michael</span> </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="input-group p-t-15">
+                                <input type="text" class="form-control" placeholder="Enter text here...">
+                                <span class="input-group-addon">
+                                    <i class="zmdi zmdi-mail-send"></i>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-group p-t-15">
-                        <input type="text" class="form-control" placeholder="Enter text here...">
-                        <span class="input-group-addon">
-                            <i class="zmdi zmdi-mail-send"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
+                </div>-->
 
         <section class="content ecommerce-page">
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-7 col-md-6 col-sm-12">
                         <h2>Product
-                            <small class="text-muted">Welcome to Compass</small>
+                            <small class="text-muted">Welcome to Marketo</small>
                         </h2>
                     </div>
                     <div class="col-lg-5 col-md-6 col-sm-12">
@@ -493,7 +496,7 @@
                                         <div class="card product_item">
                                             <div class="body">
                                                 <div class="cp_img">
-                                                    
+
                                                     <img src="data:image/jpeg;base64,${applicationScope.products.get(i).productImage}" alt="Product" class="img-fluid" />
                                                     <div class="hover">
                                                         <a href="javascript:void(0);" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>

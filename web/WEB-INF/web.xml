@@ -4,14 +4,21 @@
         <servlet-name>EditUserProfile</servlet-name>
         <servlet-class>servlets.EditUserProfile</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckOutServlet</servlet-name>
+        <servlet-class>servlets.CheckOutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogoutController</servlet-name>
         <url-pattern>/Logout</url-pattern>
     </servlet-mapping>
-   
     <servlet-mapping>
         <servlet-name>EditUserProfile</servlet-name>
         <url-pattern>/EditUserProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckOutServlet</servlet-name>
+        <url-pattern>/CheckOutServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -51,7 +58,6 @@
         <servlet-name>SignUpController</servlet-name>
         <url-pattern>/sign-up</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>CartServlet</servlet-name>
         <servlet-class>servlets.CartServlet</servlet-class>

@@ -39,9 +39,6 @@
                                 <a class="nav-link" href="${pageContext.request.contextPath}/home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="ec-product.jsp">Search Result</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" title="Follow us on Twitter" href="#" target="_blank">
                                 <i class="zmdi zmdi-twitter"></i>
                                 <p class="d-lg-none d-xl-none">Twitter</p>
@@ -60,7 +57,7 @@
                             </a>
                         </li>                
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary btn-round" href="sign-in.html">SIGN IN</a>
+                            <a class="nav-link btn btn-primary btn-round" href="${pageContext.request.contextPath}/sign-in.jsp">SIGN IN</a>
                         </li>
                     </ul>
                 </div>
@@ -115,7 +112,7 @@
                 </div>
             </footer>
         </div>
-
+                                
         <!-- Jquery Core Js -->
         <script src="assets/bundles/libscripts.bundle.js"></script>
         <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
@@ -126,5 +123,14 @@
         </script>
     </body>
 
-    <!-- Mirrored from www.wrraptheme.com/templates/compass/html/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Feb 2019 13:20:06 GMT -->
+    <!-- Jquery Core Js -->
+    <script src="assets/bundles/libscripts.bundle.js"></script>
+    <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
+    <script>
+                            $(".navbar-toggler").on('click', function () {
+                                $("html").toggleClass("nav-open");
+                            });
+    </script>
+</body>
+
 </html>

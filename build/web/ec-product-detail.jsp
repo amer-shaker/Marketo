@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="assets/css/ecommerce.css">
         <link rel="stylesheet" href="assets/css/color_skins.css">
     </head>
-    <body class="theme-orange">
+    <body class="theme-cyan">
         <!-- Page Loader -->
         <div class="page-loader-wrapper">
             <div class="loader">
