@@ -14,7 +14,7 @@
         <title>ec-product-details</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <!-- Favicon-->
-        <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
         <!-- Custom Css -->
         <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="assets/css/ecommerce.css">

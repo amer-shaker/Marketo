@@ -21,13 +21,11 @@ import utils.Constants;
  */
 public class HomeServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher mRequestDispatcher = request.getRequestDispatcher("ec-product.jsp");
         CategoryDAO categoryDAO = new CategoryDAO();
         ProductDAO productDAO = new ProductDAO();
-
         try {
             ServletContext context = getServletConfig().getServletContext();
             ArrayList<ProductBean> products;
@@ -39,7 +37,33 @@ public class HomeServlet extends HttpServlet {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-
         mRequestDispatcher.forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+//        processRequest(request, response);
+RequestDispatcher mRequestDispatcher = request.getRequestDispatcher("ec-product.jsp");
+        CategoryDAO categoryDAO = new CategoryDAO();
+        ProductDAO productDAO = new ProductDAO();
+        try {
+            ServletContext context = getServletConfig().getServletContext();
+            ArrayList<ProductBean> products;
+            ArrayList<CategoryBean> categories = categoryDAO.getProductCategories();
+            products = productDAO.getProducts();
+            products.get(0).getProductName();
+            context.setAttribute(Constants.CATEGORIES_LIST_ATTRIBUTE, categories);
+            context.setAttribute("products", products);
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        mRequestDispatcher.forward(request, response);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }

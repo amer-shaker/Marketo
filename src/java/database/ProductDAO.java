@@ -121,9 +121,11 @@ public class ProductDAO {
                 product.setDescribtion(resultSet.getString(DESCRIPTION));
                 product.setPrice(resultSet.getDouble(PRICE));
                 product.setQuantity(resultSet.getInt(QUANTITY));
-
+                String imageURL = null;
                 InputStream inputStream = resultSet.getBinaryStream(PRODUCT_IMAGE);
-                String imageURL = Utility.readImage(inputStream);
+                if (inputStream != null) {
+                    imageURL = Utility.readImage(inputStream);
+                }
                 product.setProductImage(imageURL);
 
                 product.setCateegoryId(resultSet.getInt(CATEGORY_ID));
