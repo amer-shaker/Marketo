@@ -4,10 +4,17 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/CartPage.jsp</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/CheckOutController.java</file>
             <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/EditUserProfile.java</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/DownloadBill.java</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/PaymentController.java</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/UserProfileServlet.java</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/database/UserDAO.java</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/database/CartDAO.java</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/CartServlet.java</file>
             <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/LoginController.java</file>
-            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/AddProductServlet.java</file>
-            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/src/java/servlets/DashboardServlet.java</file>
+            <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/checkoutPage.jsp</file>
             <file>file:/C:/Users/elmahask/Desktop/Final%20Project/Marketo/web/ec-product.jsp</file>
         </group>
     </open-files>
