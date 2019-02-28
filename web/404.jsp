@@ -8,7 +8,7 @@
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
 
-        <title>404 Error</title>
+        <title>Marketo</title>
 
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -112,7 +112,7 @@
                 </div>
             </footer>
         </div>
-
+                                
         <!-- Jquery Core Js -->
         <script src="assets/bundles/libscripts.bundle.js"></script>
         <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
@@ -122,4 +122,15 @@
                             });
         </script>
     </body>
+
+    <!-- Jquery Core Js -->
+    <script src="assets/bundles/libscripts.bundle.js"></script>
+    <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
+    <script>
+                            $(".navbar-toggler").on('click', function () {
+                                $("html").toggleClass("nav-open");
+                            });
+    </script>
+</body>
+
 </html>

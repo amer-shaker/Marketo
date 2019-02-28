@@ -8,6 +8,7 @@
 <aside id="leftsidebar" class="sidebar">
     <div class="menu">
         <ul class="list">
+<<<<<<< HEAD
 
             <div class="user-info">
                 <div class="image"><a href="${pageContext.request.contextPath}/UserProfileServlet">
@@ -15,6 +16,19 @@
                 <div class="detail">
                     <h4>${adminObj.firstName}</h4>
                     <small>${adminObj.jobTitle}</small>                        
+=======
+            <li>
+                <div class="user-info">
+                    <div class="image"><a href="profile.html"><img src="assets/images/profile_av.jpg"
+                                                                   alt="User"></a></div>
+                    <div class="detail">
+                        <h4>Amer</h4>
+                        <small>Web & Mobile Developer</small>
+                    </div>
+                    <a href="ec-users.jsp" title="Contact List"><i class="zmdi zmdi-account-box-phone"></i></a>
+                    <a href="profile.jsp" title="Profile"><i class="material-icons">account_box</i></a>
+                    <a href="sign-in.html" title="Sign out"><i class="zmdi zmdi-power"></i></a>
+>>>>>>> 2bb8431fd7dcc7c5c2bbc314ee466ae6984a028b
                 </div>
                 <a href="${pageContext.request.contextPath}/UserProfileServlet" title="Profile"><i class="zmdi zmdi-account"></i></a>
                 <a href="${pageContext.request.contextPath}/Logout" title="Sign out"><i class="zmdi zmdi-power"></i></a>

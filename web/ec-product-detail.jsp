@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="assets/css/ecommerce.css">
         <link rel="stylesheet" href="assets/css/color_skins.css">
     </head>
-    <body class="theme-orange">
+    <body class="theme-cyan">
         <!-- Page Loader -->
         <div class="page-loader-wrapper">
             <div class="loader">
@@ -41,19 +41,17 @@
         <!-- Right Sidebar -->
         <%@include file="rightSideMenu.jsp" %>
 
-        <!-- Chat-launcher -->
-
         <section class="content ecommerce-page">
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-7 col-md-6 col-sm-12">
                         <h2>Product Detail
-                            <small class="text-muted">Welcome to Compass</small>
+                            <small class="text-muted">Welcome to Marketo</small>
                         </h2>
                     </div>
                     <div class="col-lg-5 col-md-6 col-sm-12">
                         <ul class="breadcrumb float-md-right">
-                            <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Compass</a></li>
+                            <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Marketo</a></li>
                             <li class="breadcrumb-item"><a href="ec-dashboard.html">eCommerce</a></li>
                             <li class="breadcrumb-item active">Product Detail</li>
                         </ul>

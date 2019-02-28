@@ -1,6 +1,5 @@
 package database;
 
-//import beans.ItemBean;
 import beans.ItemsBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
