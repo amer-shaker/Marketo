@@ -8,18 +8,18 @@
 <aside id="leftsidebar" class="sidebar">
     <div class="menu">
         <ul class="list">
-            <li>
-                <div class="user-info">
-                    <div class="image"><a href="profile.html"><img src="assets/images/profile_av.jpg"
-                                                                   alt="User"></a></div>
-                    <div class="detail">
-                        <h4>Amer</h4>
-                        <small>Web And Mobile Developer</small>
-                    </div>
-                    <a href="ec-users.jsp" title="Contact List"><i class="zmdi zmdi-account-box-phone"></i></a>
-                    <a href="profile.jsp" title="Profile"><i class="material-icons">account_box</i></a>
-                    <a href="sign-in.html" title="Sign out"><i class="zmdi zmdi-power"></i></a>
+
+            <div class="user-info">
+                <div class="image"><a href="${pageContext.request.contextPath}/UserProfileServlet">
+                        <img src="assets/images/profile_av.jpg" alt="User"></a></div>
+                <div class="detail">
+                    <h4>${adminObj.firstName}</h4>
+                    <small>${adminObj.jobTitle}</small>                        
                 </div>
+                <a href="${pageContext.request.contextPath}/UserProfileServlet" title="Profile"><i class="zmdi zmdi-account"></i></a>
+                <a href="${pageContext.request.contextPath}/Logout" title="Sign out"><i class="zmdi zmdi-power"></i></a>
+                <a href="ec-dashboard.jsp" title="Home"><i class="zmdi zmdi-home"></i></a>
+            </div>
             </li>
             <li class="active open"> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>App</span>
                 </a>

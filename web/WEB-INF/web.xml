@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    <servlet>
+     <servlet>
         <servlet-name>EditUserProfile</servlet-name>
         <servlet-class>servlets.EditUserProfile</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CheckOutServlet</servlet-name>
-        <servlet-class>servlets.CheckOutServlet</servlet-class>
+        <servlet-name>CheckOutController</servlet-name>
+        <servlet-class>servlets.CheckOutController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaymentController</servlet-name>
+        <servlet-class>servlets.PaymentController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DownloadBill</servlet-name>
+        <servlet-class>servlets.DownloadBill</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LogoutController</servlet-name>
@@ -17,8 +25,16 @@
         <url-pattern>/EditUserProfile</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CheckOutServlet</servlet-name>
-        <url-pattern>/CheckOutServlet</url-pattern>
+        <servlet-name>CheckOutController</servlet-name>
+        <url-pattern>/CheckOutController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaymentController</servlet-name>
+        <url-pattern>/PaymentController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DownloadBill</servlet-name>
+        <url-pattern>/DownloadBill</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

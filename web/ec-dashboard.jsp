@@ -31,7 +31,7 @@
         <!-- Page Loader -->
         <div class="page-loader-wrapper">
             <div class="loader">
-                <div class="m-t-30"><img class="zmdi-hc-spin" src="assets/images/logo.svg" width="48" height="48" alt="Compass"></div>
+                <div class="m-t-30"><img class="zmdi-hc-spin" src="assets/images/logo.svg" width="48" height="48" alt="Marketo"></div>
                 <p>Please wait...</p>
             </div>
         </div>
@@ -59,8 +59,8 @@
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
                     <ul class="breadcrumb float-md-right">
-                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Compass</a></li>
-                        <li class="breadcrumb-item"><a href="ec-dashboard.html">eCommerce</a></li>
+                        <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/home"><i class="zmdi zmdi-home"></i>Marketo</a></li>
+                        <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/ec-dashboard">eCommerce</a></li>
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ul>
                 </div>

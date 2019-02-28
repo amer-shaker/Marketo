@@ -34,7 +34,7 @@
         <div class="page-loader-wrapper">
             <div class="loader">
                 <div class="m-t-30"><img class="zmdi-hc-spin" src="assets/images/logo.svg" width="48" height="48"
-                                         alt="Compass"></div>
+                                         alt="Marketo"></div>
                 <p>Please wait...</p>
             </div>
         </div>
@@ -66,7 +66,7 @@
                             </button>
                         </form>
                         <ul class="breadcrumb float-md-right">
-                            <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Marketo</a></li>
+                            <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/home"><i class="zmdi zmdi-home"></i> Marketo</a></li>
                             <li class="breadcrumb-item"><a href="ec-recent-orders.jsp">eCommerce</a></li>
                             <li class="breadcrumb-item active">Product List</li>
                         </ul>

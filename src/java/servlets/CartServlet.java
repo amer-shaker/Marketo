@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,6 +33,8 @@ public class CartServlet extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
         int product_id = Integer.valueOf(req.getParameter("productId"));
+
+        HttpSession session = req.getSession(false);
 
         cartDAO = new CartDAO();
 
@@ -54,6 +57,7 @@ public class CartServlet extends HttpServlet {
             items.remove(index);
         }
         System.out.println(items);
+        session.setAttribute("lineproducts", items);
 
         req.setAttribute("items", items);
         mRequestDispatcher.forward(req, resp);
@@ -64,6 +68,7 @@ public class CartServlet extends HttpServlet {
         try {
             resp.setContentType("text/html;charset=UTF-8");
             PrintWriter out = resp.getWriter();
+            HttpSession session = req.getSession(false);
 
             //   System.out.println("jjjjjjjj"+j.getUserId());
             boolean flag = false;
@@ -71,14 +76,18 @@ public class CartServlet extends HttpServlet {
 
             cartDAO = new CartDAO();
             UserBean userBean = (UserBean) req.getSession(false).getAttribute("userObj");
-
-            System.out.println(userBean.getUserId());
-            cartDAO.addProductToCart(1, product_id, userBean.getUserId());
-
-            RequestDispatcher mRequestDispatcher = req.getRequestDispatcher("CartPage.jsp");
-            items = cartDAO.getProductItems();
-            req.setAttribute("items", items);
-            mRequestDispatcher.forward(req, resp);
+            if (userBean == null) {
+                RequestDispatcher mRequestDispatcher = req.getRequestDispatcher("sign-in.jsp");
+                mRequestDispatcher.forward(req, resp);
+            } else {
+                System.out.println("userBean" + userBean.getUserId());
+                cartDAO.addProductToCart(1, product_id, userBean.getUserId());
+                RequestDispatcher mRequestDispatcher = req.getRequestDispatcher("CartPage.jsp");
+                items = cartDAO.getProductItems();
+                req.setAttribute("items", items);
+                session.setAttribute("lineproducts", items);
+                mRequestDispatcher.forward(req, resp);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(CartServlet.class.getName()).log(Level.SEVERE, null, ex);
         }

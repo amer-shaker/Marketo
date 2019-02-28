@@ -44,7 +44,7 @@ public class HomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-RequestDispatcher mRequestDispatcher = request.getRequestDispatcher("ec-product.jsp");
+        RequestDispatcher mRequestDispatcher = request.getRequestDispatcher("ec-product.jsp");
         CategoryDAO categoryDAO = new CategoryDAO();
         ProductDAO productDAO = new ProductDAO();
         try {
@@ -64,6 +64,20 @@ RequestDispatcher mRequestDispatcher = request.getRequestDispatcher("ec-product.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+RequestDispatcher mRequestDispatcher = request.getRequestDispatcher("ec-product.jsp");
+        CategoryDAO categoryDAO = new CategoryDAO();
+        ProductDAO productDAO = new ProductDAO();
+        try {
+            ServletContext context = getServletConfig().getServletContext();
+            ArrayList<ProductBean> products;
+            ArrayList<CategoryBean> categories = categoryDAO.getProductCategories();
+            products = productDAO.getProducts();
+            products.get(0).getProductName();
+            context.setAttribute(Constants.CATEGORIES_LIST_ATTRIBUTE, categories);
+            context.setAttribute("products", products);
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        mRequestDispatcher.forward(request, response);
     }
 }

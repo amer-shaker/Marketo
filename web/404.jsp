@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
             <div class="container">        
                 <div class="navbar-translate n_logo">
-                    <a class="navbar-brand" href="#" title="" target="_blank">Marketo</a>
+                    <a class="navbar-brand" href="${pageContext.request.contextPath}/home" title="Marketo">Marketo</a>
                     <button class="navbar-toggler" type="button">
                         <span class="navbar-toggler-bar bar1"></span>
                         <span class="navbar-toggler-bar bar2"></span>
@@ -74,7 +74,7 @@
                                 <div class="logo-container">
                                     <img src="assets/images/logo.svg" alt="">
                                 </div>
-                                <h5>Error 404</h5>
+                                <h5>MArketo</h5>
                                 <span>Page not found</span>
                             </div>
                             <div class="content">

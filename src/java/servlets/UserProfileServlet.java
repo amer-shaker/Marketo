@@ -19,17 +19,25 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "UserProfileServlet", urlPatterns = {"/UserProfileServlet"})
 public class UserProfileServlet extends HttpServlet {
-    
+
     private String userId;
     private final String USER_ATTRIBUTE = "user";
     private final String UPDATE_FORWARD = "updated";
     private UserDAO userDao = null;
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         UserBean userObj = (UserBean) request.getSession(false).getAttribute("userObj");
-        userId = String.valueOf(userObj.getUserId());
-        userObj.getUserId();
+        UserBean adminObj = (UserBean) request.getSession(false).getAttribute("adminObj");
+//        userId = String.valueOf(userObj.getUserId());
+        if (userObj != null) {
+            userId = String.valueOf(userObj.getUserId());
+            System.out.println("User id " + userId);
+        }else{
+            userId = String.valueOf(adminObj.getUserId());
+            System.out.println("admin id " + userId);
+        }
+//        userObj.getUserId();
 
         //get user from database
         UserBean user = new UserBean();
@@ -43,19 +51,19 @@ public class UserProfileServlet extends HttpServlet {
             System.out.println("null");
         }
     }
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-    
+
     private UserBean getUserById(String userId) {
         userDao = new UserDAO();
         try {
@@ -65,5 +73,5 @@ public class UserProfileServlet extends HttpServlet {
         }
         return null;
     }
-    
+
 }

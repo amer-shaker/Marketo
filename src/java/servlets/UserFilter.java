@@ -38,7 +38,7 @@ public class UserFilter implements Filter {
 
     @Override
     public void destroy() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        System.out.println("Destroy User Filter");
     }
 
 }

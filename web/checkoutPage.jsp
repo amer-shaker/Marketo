@@ -1,10 +1,5 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.ArrayList"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js " lang="en">
     <head>
         <meta charset="utf-8">
@@ -14,11 +9,9 @@
 
         <title>Marketo</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
-        <!-- Favicon-->
         <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
         <!-- Custom Css -->
         <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/ecommerce.css">
         <link rel="stylesheet" href="assets/css/color_skins.css">
     </head>
     <body class="theme-cyan">
@@ -32,7 +25,6 @@
 
         <!-- Overlay For Sidebars -->
         <div class="overlay"></div>
-
         <!-- Top Bar -->
         <nav class="navbar">
             <div class="col-12">        
@@ -76,7 +68,7 @@
                             </div>
                         </li>
                     </c:if>
-                        <c:if test="${adminObj!=null}">
+                    <c:if test="${adminObj!=null}">
                         <li>
                             <div class="user-info">
                                 <div class="image"><a href="${pageContext.request.contextPath}/profile.jsp"><img src="assets/images/profile_av.jpg" alt="User"></a></div>
@@ -172,198 +164,72 @@
                                         </a>
                                     </li>
                                 </c:if>
-
                             </ul>
                         </div>
-
                     </div>
                 </div>
             </div>
         </aside>
-        <section class="content ecommerce-page">
+        <section class="content">
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-7 col-md-6 col-sm-12">
-                        <h2>Product
-                            <small class="text-muted">Welcome to Marketo</small>
+                        <h2>Check Out
+                            <small>Taken from <a href="#">CheckOut</a></small>
                         </h2>
                     </div>
                     <div class="col-lg-5 col-md-6 col-sm-12">
                         <ul class="breadcrumb float-md-right">
-                            <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/home"><i class="zmdi zmdi-home"></i> Marketo</a></li>
-                            <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/home">eCommerce</a></li>
-                            <li class="breadcrumb-item active">Product</li>
+                            <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Compass</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Forms</a></li>
+                            <li class="breadcrumb-item active">Check Out</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="container-fluid">
+
                 <div class="row clearfix">
-
-                    <c:choose>
-                        <c:when test="${!empty param.searchvalue}">
-                            <c:forEach begin="0" end="${applicationScope.products.size()-1}" var="i"> 
-                                <c:if test="${((applicationScope.products.get(i).productName).toLowerCase()).contains(param.searchvalue)}">
-                                    <div class="col-lg-3 col-md-4 col-sm-12">
-
-                                        <% /*
-                                                                 ArrayList<beans.ProductBean> categories = (ArrayList<beans.ProductBean>) request.getAttribute("products");
-                                                                 for(int i =0 ; i<categories.size();i++)
-                                                                 {
-                                        
-                                                                 System.out.println("Size ************");
-                                             */
-
-
-                                        %>
-
-
-                                        <div class="card product_item">
-                                            <div class="body">
-                                                <div class="cp_img">
-                                                    <img src="assets/images/ecommerce/9.png" alt="Product" class="img-fluid" />
-                                                    <div class="hover">
-                                                        <a href="javascript:void(0);" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="product_details">
-                                                    <h5><a href="ec-product-detail.jsp?id=${applicationScope.products.get(i).productId}&index=${i}"><c:out value="${applicationScope.products.get(i).productName}"/></a></h5>
-                                                    <ul class="product_price list-unstyled">
-                                                        <li class="old_price"><fmt:formatNumber value="${applicationScope.products.get(i).price}" type="currency" currencySymbol="$"/></li>
-                                                        <li class="new_price"><fmt:formatNumber value="${applicationScope.products.get(i).price+300}" type="currency" currencySymbol="$"/></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-
-                                        </div> 
-
-                                        <%                     //      }
-
-                                        %>
-
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                <h2><strong>Total Price </strong>${param.total}  L.E</h2>
+                            </div>
+                            <c:if test="${requestScope.statues==0}">
+                                <h1>balance not enough</h1>
+                            </c:if>
+                            <c:if test="${requestScope.statues==-1}">
+                                <h1>card not Found</h1>
+                            </c:if>
+                            <div class="body">
+                                <form id="form_advanced_validation" action="${pageContext.request.contextPath}/PaymentController?total=${param.total}" method="POST">
+                                    <div class="form-group form-float">
+                                        <div class="help-info"><h5>Name</h5></div>
+                                        <input type="text" class="form-control" name="name" required>                                
                                     </div>
-                                </c:if>
-                            </c:forEach>
-
-
-
-                        </c:when> 
-                        <c:when test="${!empty param.category}">
-                            <fmt:parseNumber var = "category_id" type = "number" value = "${param.category}" />
-                            <c:forEach begin="0" end="${applicationScope.products.size()-1}" var="i"> 
-
-                                <c:if test="${category_id == applicationScope.products.get(i).cateegoryId}">
-                                    <div class="col-lg-3 col-md-4 col-sm-12">
-
-                                        <% /*
-                                                                 ArrayList<beans.ProductBean> categories = (ArrayList<beans.ProductBean>) request.getAttribute("products");
-                                                                 for(int i =0 ; i<categories.size();i++)
-                                                                 {
-                                        
-                                                                 System.out.println("Size ************");
-                                             */
-
-                                        %>
-
-
-                                        <div class="card product_item">
-                                            <div class="body">
-                                                <div class="cp_img">
-
-                                                    <img src="data:image/jpeg;base64,${applicationScope.products.get(i).productImage}" alt="Product" class="img-fluid" />
-                                                    <div class="hover">
-                                                        <a href="javascript:void(0);" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="product_details">
-                                                    <h5><a href="ec-product-detail.jsp?id=${applicationScope.products.get(i).productId}&index=${i}"><c:out value="${applicationScope.products.get(i).productName}"/></a></h5>
-                                                    <ul class="product_price list-unstyled">
-                                                        <li class="old_price"><fmt:formatNumber value="${applicationScope.products.get(i).price}" type="currency" currencySymbol="$"/></li>
-                                                        <li class="new_price"><fmt:formatNumber value="${applicationScope.products.get(i).price+300}" type="currency" currencySymbol="$"/></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-
-                                        </div> 
-
-                                        <%                     //      }
-
-                                        %>
-
+                                    <div class="form-group form-float">
+                                        <div class="help-info"><h5>Address</h5></div>
+                                        <input type="text" class="form-control" name="address" required>                                
                                     </div>
-                                </c:if>
-                            </c:forEach>
-
-                        </c:when>
-                        <c:otherwise>
-                            <c:forEach begin="0" end="${applicationScope.products.size()-1}" var="i"> 
-                                <div class="col-lg-3 col-md-4 col-sm-12">
-
-                                    <% /*
-                                                             ArrayList<beans.ProductBean> categories = (ArrayList<beans.ProductBean>) request.getAttribute("products");
-                                                             for(int i =0 ; i<categories.size();i++)
-                                                             {
-                                        
-                                                             System.out.println("Size ************");
-                                         */
-
-                                    %>
-
-
-                                    <div class="card product_item">
-                                        <div class="body">
-                                            <div class="cp_img">
-                                                <img src="data:image/jpeg;base64,${applicationScope.products.get(i).productImage}" alt="Product" class="img-fluid" />
-                                                <div class="hover">
-                                                    <a href="javascript:void(0);" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
-                                                    <a href="${pageContext.request.contextPath}/CartServlet?product_id=${applicationScope.products.get(i).productId}" class="btn btn-primary waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="product_details">
-                                                <h5><a href="ec-product-detail.jsp?id=${applicationScope.products.get(i).productId}&index=${i}"><c:out value="${applicationScope.products.get(i).productName}"/></a></h5>
-                                                <ul class="product_price list-unstyled">
-                                                    <li class="old_price"><fmt:formatNumber value="${applicationScope.products.get(i).price}" type="currency" currencySymbol="$"/></li>
-                                                    <li class="new_price"><fmt:formatNumber value="${applicationScope.products.get(i).price+300}" type="currency" currencySymbol="$"/></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-
-                                    </div> 
-
-                                    <%                     //      }
-
-                                    %>
-
-                                </div>
-                            </c:forEach>
-                        </c:otherwise>
-                    </c:choose>
-
+                                    <div class="form-group form-float">
+                                        <div class="help-info"><h5>Card Number</h5></div>
+                                        <input type="number" class="form-control" name="cardNumber" required>                                
+                                    </div>
+                                    <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit">SUBMIT</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </section>
-        <script type="text/javascript">
-            function openPage(pageURL)
-            {
 
-                var x = document.getElementById('search-search').value;
-                if (x != null && x != "")
-                {
-                    window.location.href = pageURL + "?searchvalue=" + x;
-                } else {
-                    alert("enter product Name ");
-                }
-
-            }
-        </script>
         <!-- Jquery Core Js --> 
         <script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
         <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
+        <script src="assets/plugins/jquery-validation/jquery.validate.js"></script> <!-- Jquery Validation Plugin Css --> 
+        <script src="assets/plugins/jquery-steps/jquery.steps.js"></script> <!-- JQuery Steps Plugin Js --> 
         <script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js --> 
+        <script src="assets/js/pages/forms/form-validation.js"></script> 
     </body>
 </html>

@@ -38,151 +38,21 @@
             <div class="col-12">        
                 <div class="navbar-header">
                     <a href="javascript:void(0);" class="bars"></a>
-                    <a class="navbar-brand" href="ec-product.jsp"><img src="assets/images/logo.svg" width="30" alt="Compass"><span class="m-l-10">Shopik</span></a>
+                    <a class="navbar-brand" href="${pageContext.request.contextPath}/home"><img src="assets/images/logo.svg" width="30" alt="Marketo"><span class="m-l-10">Marketo</span></a>
                 </div>
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="javascript:void(0);" class="ls-toggle-btn" data-close="true"><i class="zmdi zmdi-swap"></i></a></li>            
                     <li class="hidden-sm-down">
                         <div class="input-group">
-                            <input type="text" id="search-search" class="form-control" placeholder="Search...">
-                            <span onclick="openPage('ec-product.jsp')" class="input-group-addon">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-addon">
                                 <i class="zmdi zmdi-search"></i>
                             </span>
                         </div>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-
-                    <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-right slideDown">
-                        <li class="header">NOTIFICATIONS</li>
-                        <li class="body">
-                            <ul class="menu list-unstyled">
-                                <li> <a href="javascript:void(0);">
-                                        <div class="icon-circle bg-blue"><i class="zmdi zmdi-account"></i></div>
-                                        <div class="menu-info">
-                                            <h4>8 New Members joined</h4>
-                                            <p><i class="zmdi zmdi-time"></i> 14 mins ago </p>
-                                        </div>
-                                    </a> </li>
-                                <li> <a href="javascript:void(0);">
-                                        <div class="icon-circle bg-amber"><i class="zmdi zmdi-shopping-cart"></i></div>
-                                        <div class="menu-info">
-                                            <h4>4 Sales made</h4>
-                                            <p> <i class="zmdi zmdi-time"></i> 22 mins ago </p>
-                                        </div>
-                                    </a> </li>
-                                <li> <a href="javascript:void(0);">
-                                        <div class="icon-circle bg-red"><i class="zmdi zmdi-delete"></i></div>
-                                        <div class="menu-info">
-                                            <h4><b>Nancy Doe</b> Deleted account</h4>
-                                            <p> <i class="zmdi zmdi-time"></i> 3 hours ago </p>
-                                        </div>
-                                    </a> </li>
-                                <li> <a href="javascript:void(0);">
-                                        <div class="icon-circle bg-green"><i class="zmdi zmdi-edit"></i></div>
-                                        <div class="menu-info">
-                                            <h4><b>Nancy</b> Changed name</h4>
-                                            <p> <i class="zmdi zmdi-time"></i> 2 hours ago </p>
-                                        </div>
-                                    </a> </li>
-                                <li> <a href="javascript:void(0);">
-                                        <div class="icon-circle bg-grey"><i class="zmdi zmdi-comment-text"></i></div>
-                                        <div class="menu-info">
-                                            <h4><b>John</b> Commented your post</h4>
-                                            <p> <i class="zmdi zmdi-time"></i> 4 hours ago </p>
-                                        </div>
-                                    </a> </li>
-                                <li> <a href="javascript:void(0);">
-                                        <div class="icon-circle bg-purple"><i class="zmdi zmdi-refresh"></i></div>
-                                        <div class="menu-info">
-                                            <h4><b>John</b> Updated status</h4>
-                                            <p> <i class="zmdi zmdi-time"></i> 3 hours ago </p>
-                                        </div>
-                                    </a> </li>
-                                <li> <a href="javascript:void(0);">
-                                        <div class="icon-circle bg-light-blue"><i class="zmdi zmdi-settings"></i></div>
-                                        <div class="menu-info">
-                                            <h4>Settings Updated</h4>
-                                            <p> <i class="zmdi zmdi-time"></i> Yesterday </p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="footer"> <a href="javascript:void(0);">View All Notifications</a> </li>
-                    </ul>
-                    </li>
-                    <li class="dropdown"> 
-                        <ul class="dropdown-menu dropdown-menu-right slideDown">
-                            <li class="header">TASKS</li>
-                            <li class="body">
-                                <ul class="menu tasks list-unstyled">
-                                    <li> <a href="javascript:void(0);">
-                                            <div class="progress-container progress-primary">
-                                                <span class="progress-badge">Footer display issue</span>
-                                                <div class="progress">
-                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
-                                                        <span class="progress-value">86%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li> <a href="javascript:void(0);">
-                                            <div class="progress-container progress-info">
-                                                <span class="progress-badge">Answer GitHub questions</span>
-                                                <div class="progress">
-                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%;">
-                                                        <span class="progress-value">35%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li> <a href="javascript:void(0);">
-                                            <div class="progress-container progress-success">
-                                                <span class="progress-badge">Solve transition issue</span>
-                                                <div class="progress">
-                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%;">
-                                                        <span class="progress-value">72%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li><a href="javascript:void(0);">
-                                            <div class="progress-container">
-                                                <span class="progress-badge"> Create new dashboard</span>
-                                                <div class="progress">
-                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                                                        <span class="progress-value">45%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li> <a href="javascript:void(0);">
-                                            <div class="progress-container progress-warning">
-                                                <span class="progress-badge">Panding Project</span>
-                                                <div class="progress">
-                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100" style="width: 29%;">
-                                                        <span class="progress-value">29%</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer"><a href="javascript:void(0);">View All</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="fullscreen hidden-sm-down" data-provide="fullscreen" data-close="true"><i class="zmdi zmdi-fullscreen"></i></a>
-                    </li>
-
+                    <!--<li> <a href="javascript:void(0);" class="fullscreen hidden-sm-down" data-provide="fullscreen" data-close="true"><i class="zmdi zmdi-fullscreen"></i></a></li>-->
                     <li class=""><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
                 </ul>
             </div>
@@ -192,7 +62,7 @@
         <aside id="leftsidebar" class="sidebar">
             <div class="menu">
                 <ul class="list">
-                    <c:if test="${userObj.firstName!=null}">
+                    <c:if test="${userObj!=null}">
                         <li>
                             <div class="user-info">
                                 <div class="image"><a href="${pageContext.request.contextPath}/profile.jsp"><img src="assets/images/profile_av.jpg" alt="User"></a></div>
@@ -206,7 +76,24 @@
                             </div>
                         </li>
                     </c:if>
-                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a>
+                        <c:if test="${adminObj!=null}">
+                        <li>
+                            <div class="user-info">
+                                <div class="image"><a href="${pageContext.request.contextPath}/profile.jsp"><img src="assets/images/profile_av.jpg" alt="User"></a></div>
+                                <div class="detail">
+                                    <h4>${adminObj.firstName}</h4>
+                                    <small>${adminObj.jobTitle}</small>                        
+                                </div>
+                                <a href="${pageContext.request.contextPath}/UserProfileServlet" title="Profile"><i class="zmdi zmdi-account"></i></a>
+                                <a href="${pageContext.request.contextPath}/Logout" title="Sign out"><i class="zmdi zmdi-power"></i></a>
+                                <a href="${pageContext.request.contextPath}/home" title="Home"><i class="zmdi zmdi-home"></i></a>
+                            </div>
+                        </li>
+                    </c:if>
+                    <li> <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="zmdi zmdi-home">
+                            </i><span>Categories</span>
+                        </a>
                         <ul class="ml-menu">
                             <c:forEach items="${applicationScope.categories}" var="category">
                                 <li><a href="ec-product.jsp?category=${category.categoryId}">${category.categoryName}</a> </li>
@@ -262,77 +149,30 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="card">
-                            <h6>General Settings</h6>
-                            <ul class="setting-list list-unstyled">
-                                <li>
-                                    <div class="checkbox">
-                                        <input id="checkbox1" type="checkbox">
-                                        <label for="checkbox1">Report Panel Usage</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="checkbox">
-                                        <input id="checkbox2" type="checkbox" checked="">
-                                        <label for="checkbox2">Email Redirect</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="checkbox">
-                                        <input id="checkbox3" type="checkbox" checked="">
-                                        <label for="checkbox3">Notifications</label>
-                                    </div>                        
-                                </li>
-                                <li>
-                                    <div class="checkbox">
-                                        <input id="checkbox4" type="checkbox" checked="">
-                                        <label for="checkbox4">Auto Updates</label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card">
-                            <h6>Account Settings</h6>
-                            <ul class="setting-list list-unstyled">
-                                <li>
-                                    <div class="checkbox">
-                                        <input id="checkbox5" type="checkbox" checked="">
-                                        <label for="checkbox5">Offline</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="checkbox">
-                                        <input id="checkbox6" type="checkbox" checked="">
-                                        <label for="checkbox6">Location Permission</label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
                     </div>                
                 </div>       
-               
+
                 <div class="tab-pane slideRight" id="activity">
                     <div class="slim_scroll">
                         <div class="card">
-
                             <ul class="list-unstyled activity">
                                 <c:if test="${userObj==null}">
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <a href="${pageContext.request.contextPath}/sign-in.jsp" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign in</a>
-                                        <a href="${pageContext.request.contextPath}/sign-up.jsp" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign up</a>
-                                    </a>
-                                </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <a href="${pageContext.request.contextPath}/sign-in.jsp" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign in</a>
+                                            <a href="${pageContext.request.contextPath}/sign-up.jsp" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign up</a>
+                                        </a>
+                                    </li>
                                 </c:if>
-                               
+
                                 <c:if test="${userObj!=null}">
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <a href="${pageContext.request.contextPath}/Logout" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign out</a>
-                                    </a>
-                                </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <a href="${pageContext.request.contextPath}/Logout" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">Sign out</a>
+                                        </a>
+                                    </li>
                                 </c:if>
-                               
+
                             </ul>
                         </div>
 
@@ -340,69 +180,6 @@
                 </div>
             </div>
         </aside>
-
-<!--         Chat-launcher 
-        <div class="chat-launcher"></div>
-        <div class="chat-wrapper">
-            <div class="card">
-                <div class="header">
-                    <ul class="list-unstyled team-info margin-0">
-                        <li class="m-r-15"><h2>Design Team</h2></li>
-                        <li>
-                            <img src="assets/images/xs/avatar2.jpg" alt="Avatar">
-                        </li>
-                        <li>
-                            <img src="assets/images/xs/avatar3.jpg" alt="Avatar">
-                        </li>
-                        <li>
-                            <img src="assets/images/xs/avatar4.jpg" alt="Avatar">
-                        </li>
-                        <li>
-                            <img src="assets/images/xs/avatar6.jpg" alt="Avatar">
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" title="Add Member"><i class="zmdi zmdi-plus-circle"></i></a>
-                        </li>
-                    </ul>                       
-                </div>
-                <div class="body">
-                    <div class="chat-widget">
-                        <ul class="chat-scroll-list clearfix">
-                            <li class="left float-left">
-                                <img src="assets/images/xs/avatar3.jpg" class="rounded-circle" alt="">
-                                <div class="chat-info">
-                                    <a class="name" href="#">Alexander</a>
-                                    <span class="datetime">6:12</span>                            
-                                    <span class="message">Hello, John </span>
-                                </div>
-                            </li>
-                            <li class="right">
-                                <div class="chat-info"><span class="datetime">6:15</span> <span class="message">Hi, Alexander<br> How are you!</span> </div>
-                            </li>
-                            <li class="right">
-                                <div class="chat-info"><span class="datetime">6:16</span> <span class="message">There are many variations of passages of Lorem Ipsum available</span> </div>
-                            </li>
-                            <li class="left float-left"> <img src="assets/images/xs/avatar2.jpg" class="rounded-circle" alt="">
-                                <div class="chat-info"> <a class="name" href="#">Elizabeth</a> <span class="datetime">6:25</span> <span class="message">Hi, Alexander,<br> John <br> What are you doing?</span> </div>
-                            </li>
-                            <li class="left float-left"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt="">
-                                <div class="chat-info"> <a class="name" href="#">Michael</a> <span class="datetime">6:28</span> <span class="message">I would love to join the team.</span> </div>
-                            </li>
-                            <li class="right">
-                                <div class="chat-info"><span class="datetime">7:02</span> <span class="message">Hello, <br>Michael</span> </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="input-group p-t-15">
-                        <input type="text" class="form-control" placeholder="Enter text here...">
-                        <span class="input-group-addon">
-                            <i class="zmdi zmdi-mail-send"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-
         <section class="content ecommerce-page">
             <div class="block-header">
                 <div class="row">
@@ -413,8 +190,8 @@
                     </div>
                     <div class="col-lg-5 col-md-6 col-sm-12">
                         <ul class="breadcrumb float-md-right">
-                            <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Compass</a></li>
-                            <li class="breadcrumb-item"><a href="ec-dashboard.html">eCommerce</a></li>
+                            <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/home"><i class="zmdi zmdi-home"></i> Marketo</a></li>
+                            <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/home">eCommerce</a></li>
                             <li class="breadcrumb-item active">Product</li>
                         </ul>
                     </div>
@@ -493,7 +270,7 @@
                                         <div class="card product_item">
                                             <div class="body">
                                                 <div class="cp_img">
-                                                    
+
                                                     <img src="data:image/jpeg;base64,${applicationScope.products.get(i).productImage}" alt="Product" class="img-fluid" />
                                                     <div class="hover">
                                                         <a href="javascript:void(0);" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
@@ -541,7 +318,7 @@
                                                 <img src="data:image/jpeg;base64,${applicationScope.products.get(i).productImage}" alt="Product" class="img-fluid" />
                                                 <div class="hover">
                                                     <a href="javascript:void(0);" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
-                                                    <a href="http://localhost:8084/Marketo/CartServlet?product_id=${applicationScope.products.get(i).productId}" class="btn btn-primary waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                                    <a href="${pageContext.request.contextPath}/CartServlet?product_id=${applicationScope.products.get(i).productId}" class="btn btn-primary waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
 
                                                 </div>
                                             </div>
